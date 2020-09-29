@@ -1,3 +1,33 @@
+html {
+	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
 body {
-	background: $color__background-body; // Fallback for when there is no custom background color defined.
+	background: $background; // Fallback for when there is no custom background color defined.
+	font-size: 14px;
+	line-height: 1.929;
+}
+
+.site-header {
+	position: relative;
+	padding-top: 0;
+
+	&.admin-bar{
+		padding-top: 46px;
+
+		@media screen and (min-width: 783px) {
+			padding-top: 32px;
+		}
+	}
+}
+
+.site-title {
+	margin-top: 0;
+}
+.site-description {
+	display: none;
 }

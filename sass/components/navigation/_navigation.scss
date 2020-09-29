@@ -1,6 +1,9 @@
 .main-navigation {
-	display: block;
-	width: 100%;
+	display: inline-block;
+	width: auto;
+	position: absolute;
+	top: 0;
+	right: 2.14em;;
 
 	ul {
 		display: none;
@@ -8,6 +11,7 @@
 		margin: 0;
 		padding-left: 0;
 
+/* Currently unnecessary
 		ul {
 			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 			float: left;
@@ -47,25 +51,33 @@
 		li.focus > ul {
 			left: auto;
 		}
+*/
 	}
 
 	li {
 		position: relative;
+		padding: 0 .714em;
 
 		&:hover > a,
 		&.focus > a {
 		}
+
 	}
 
 	a {
 		display: block;
 		text-decoration: none;
+		padding: .714rem;
+		color: #fff;
+		font-size: .857em;
+		text-transform: uppercase;
 	}
 
 	.current_page_item > a,
 	.current-menu-item > a,
 	.current_page_ancestor > a,
 	.current-menu-ancestor > a {
+		color: $color__link;
 	}
 }
 

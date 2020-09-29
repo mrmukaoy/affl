@@ -77,7 +77,7 @@ if ( ! function_exists( 'affl_setup' ) ) :
 			apply_filters(
 				'affl_custom_background_args',
 				array(
-					'default-color' => 'ffffff',
+					'default-color' => '15232a',
 					'default-image' => '',
 				)
 			)
@@ -140,8 +140,14 @@ add_action( 'widgets_init', 'affl_widgets_init' );
  * Enqueue scripts and styles.
  */
 function affl_scripts() {
+
 	wp_enqueue_style( 'affl-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'affl-style', 'rtl', 'replace' );
+
+	// Google font
+	wp_register_style( 'googleFonts', 'https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap' );
+	wp_enqueue_style( 'googleFonts' );
+
 
 	wp_enqueue_script( 'affl-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
@@ -150,6 +156,70 @@ function affl_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'affl_scripts' );
+
+/**
+ * Add social media accounts to customizer
+ */
+function affl_more_customizer_section( $wp_customize ) {
+	$wp_customize->add_section( 'social_media_section', array(
+		'title'       => __( 'Social Media Accounts' ),
+		'description' => esc_html__( 'If filled in, these will display in the page footer.' ),
+		'priority'    => 160, // Not typically needed. Default is 160
+	) );
+
+	// Settings
+	$wp_customize->add_setting( 'social_facebook', array(
+		'default'           => '',
+		'transport'         => 'postMessage',
+		'type'              => 'theme_mod',
+		'sanitize_callback' => 'esc_url_raw',
+	) );
+	$wp_customize->add_setting( 'social_twitter', array(
+		'default'           => '',
+		'transport'         => 'postMessage',
+		'type'              => 'theme_mod',
+		'sanitize_callback' => 'esc_url_raw',
+	) );
+	$wp_customize->add_setting( 'social_instagram', array(
+		'default'           => '',
+		'transport'         => 'postMessage',
+		'type'              => 'theme_mod',
+		'sanitize_callback' => 'esc_url_raw',
+	) );
+	$wp_customize->add_setting( 'social_linkedin', array(
+		'default'           => '',
+		'transport'         => 'postMessage',
+		'type'              => 'theme_mod',
+		'sanitize_callback' => 'esc_url_raw',
+	) );
+
+	// Controls
+	$wp_customize->add_control( 'social_facebook', array(
+		'label'       => __( 'Facebook URL' ),
+		'section'     => 'social_media_section',
+		'priority'    => 10,
+		'type'        => 'url',
+	) );
+	$wp_customize->add_control( 'social_twitter', array(
+		'label'       => __( 'Twitter URL' ),
+		'section'     => 'social_media_section',
+		'priority'    => 10,
+		'type'        => 'url',
+	) );
+	$wp_customize->add_control( 'social_instagram', array(
+		'label'       => __( 'Instagram URL' ),
+		'section'     => 'social_media_section',
+		'priority'    => 10,
+		'type'        => 'url',
+	) );
+	$wp_customize->add_control( 'social_linkedin', array(
+		'label'       => __( 'LinkedIn URL' ),
+		'section'     => 'social_media_section',
+		'priority'    => 10,
+		'type'        => 'url',
+	) );
+};
+add_action( 'customize_register', 'affl_more_customizer_section' );
 
 /**
  * Implement the Custom Header feature.

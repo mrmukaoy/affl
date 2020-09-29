@@ -1,5 +1,5 @@
 p {
-	margin-bottom: 1.5em;
+	margin: 0 0 1.5em;
 }
 
 dfn,
@@ -18,7 +18,7 @@ address {
 }
 
 pre {
-	background: $color__background-pre;
+	background: $background-pre;
 	font-family: $font__pre;
 	line-height: $font__line-height-pre;
 	margin-bottom: 1.6em;
@@ -42,7 +42,7 @@ acronym {
 
 mark,
 ins {
-	background: $color__background-ins;
+	background: $background-ins;
 	text-decoration: none;
 }
 
