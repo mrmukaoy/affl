@@ -21,7 +21,7 @@ get_header();
 		while ( have_posts() ) {
 			the_post();
 
-			get_template_part( 'template-parts/content', 'frontpage' );
+			get_template_part( '_inc/templates/content', 'frontpage' );
 
 		} //endwhile the loop.
 		?>

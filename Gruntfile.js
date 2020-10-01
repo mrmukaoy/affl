@@ -45,11 +45,11 @@ module.exports = function (grunt) {
 			options: {
 				implementation: sass,
 				sourceMap: true,
-				outputStyle: 'compressed',
+				// outputStyle: 'compressed',
 			},
 			dist: {
 				files: {
-					'style.css': 'sass/style.scss',
+					'style.css': '_assets/sass/style.scss',
 					// 'editor-style.css': '_assets/sass/editor-style.scss',
 					// 'block-editor-style.css': '_assets/sass/block-editor-style.scss',
 				}
@@ -72,7 +72,7 @@ module.exports = function (grunt) {
 
 		watch: {
 			sass: {
-				files: ['sass/**/*.scss'],
+				files: ['_assets/sass/**/*.scss'],
 				tasks: ['sass', 'autoprefixer']
 			},
 			// uglify: {
