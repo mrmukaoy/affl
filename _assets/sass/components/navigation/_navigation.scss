@@ -5,6 +5,10 @@
 	top: 0;
 	right: 2.14em;;
 
+	@media (min-width: 900px) {
+		top: 32px;
+	}
+
 	ul {
 		display: none;
 		list-style: none;
@@ -67,7 +71,7 @@
 	a {
 		display: block;
 		text-decoration: none;
-		padding: .714rem;
+		padding: 0 .714rem;
 		color: #fff;
 		font-size: .857em;
 		text-transform: uppercase;

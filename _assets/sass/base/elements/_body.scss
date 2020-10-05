@@ -12,6 +12,10 @@ body {
 	line-height: 1.929;
 }
 
+.site {
+	min-height: 100%;
+}
+
 .site-header {
 	position: relative;
 	padding-top: 0;
@@ -30,4 +34,11 @@ body {
 }
 .site-description {
 	display: none;
+}
+
+.site-main {
+	padding-bottom: 3em;
+	max-width: 63em;
+	padding: 0 80px;
+	margin: 0 auto;
 }

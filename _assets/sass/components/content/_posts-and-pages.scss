@@ -1,3 +1,9 @@
+.site-main {
+	@media (min-width: 900px) {
+		padding-top: 80px;
+	}
+}
+
 .sticky {
 	display: block;
 }
@@ -20,4 +26,46 @@
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
+}
+
+/* POSTS */
+// POST-ARCHIVE
+.articles-wrapper {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-content: space-between;
+	align-items: stretch;
+
+	.post {
+		background: $background-highlight;
+		width: 30%;
+		padding: 1.5em 1.786em 1.786em;
+	}
+}
+
+// SINGLE and INDIV POSTS on ARCHIVE
+.entry-title {
+	color: #ffffff;
+	letter-spacing: normal;
+	line-height: 1.25;
+}
+h1.entry-title {
+	font-size: 5em;
+}
+
+h2.entry-title {
+	font-size: 1.5em;
+}
+
+.single .post-main {
+	background: $background;
+	padding: 2.142em 5em;
+}
+
+/* PAGES */
+.page-title {
+	font-size: 5.5em;
+	line-height: 1.04;
 }
