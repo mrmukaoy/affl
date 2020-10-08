@@ -40,14 +40,17 @@
 
 	.post {
 		background: $background-highlight;
-		width: 24%;
+		width: 30%;
+		margin-bottom: 2.5em;
 
 		.content {
+			position: relative;
 			padding: 1.5em 1.786em 1.786em;
+			height: 100%;
 		}
 
 		&.has-post-thumbnail {
-			width: 48%;
+			width: 65%;
 
 			.content {
 				width: 50%;
@@ -72,7 +75,7 @@
 		color: rgba(255,255,255,0.7);
 		opacity: .7;
 		font-size: .85714em;
-		line-height: 1.25;
+		line-height: 1.5;
 
 		a {
 			color: rgba(255,255,255,0.7);
@@ -96,6 +99,9 @@
 	}
 
 	.clickthrough {
+		position: absolute;
+		bottom: 1em;
+		margin-bottom: 0;
 		text-transform: uppercase;
 		letter-spacing: 4.5px;
 	}

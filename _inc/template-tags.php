@@ -174,7 +174,7 @@ if ( ! function_exists( 'affl_archive_posted_on' ) ) {
 		$posted_on = sprintf(
 			/* translators: %s: post date. */
 			esc_html_x( '%s', 'post date', 'affl' ),
-			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+ 			$time_string
 		);
 
 		echo '<span class="posted-on">' . $posted_on . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
@@ -190,7 +190,7 @@ if ( ! function_exists( 'affl_archive_posted_by' ) ) {
 		$byline = sprintf(
 			/* translators: %s: post author. */
 			esc_html_x( 'Posted by %s', 'post author', 'affl' ),
-			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+			'<span class="author vcard">' . esc_html( get_the_author() ) . '</span>'
 		);
 
 		echo '<span class="byline"> ' . $byline . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
@@ -204,16 +204,32 @@ if ( ! function_exists( 'affl_archive_cats_tags' ) ) {
 	function affl_archive_cats_tags() {
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
-			/* translators: used between list items, there is a space after the comma */
-			$categories_list = get_the_category_list( esc_html__( ', ', 'affl' ) );
-			/* translators: used between list items, there is a space after the comma */
-			$tags_list = get_the_tag_list( '#', esc_html_x( ', #', 'list item separator', 'affl' ) );
+			// categories
+			$cats_list = '';
+			$cats = get_the_category();
+			if ( $cats ) {
+				foreach ( $cats as $cat ) {
+					$cats_list .= $cat->name .', ';
+				}
+				$cats_list = rtrim( $cats_list, ', ' );
+			}
 
-			if ( $categories_list || $tags_list ) { echo '<div class="cats-tags">'; }
+			// tags
+			$tags_list = '';
+			$tags = get_the_tags();
+			if( $tags ) {
+				foreach ( $tags as $tag ) {
+					$tags_list .= '#' . $tag->name . ', ';
+				}
+				$tags_list = rtrim( $tags_list, ', ' );
+			}
 
-			if ( $categories_list ) {
+			// build the list(s)
+			if ( $cats_list || $tags_list ) { echo '<div class="cats-tags">'; }
+
+			if ( $cats_list ) {
 				/* translators: 1: list of categories. */
-				printf( '<span class="cat-links">' . esc_html__( '%1$s', 'affl' ) . '</span>', $categories_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				printf( '<span class="cat-links">' . esc_html__( '%1$s', 'affl' ) . '</span>', $cats_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 
 			if ( $tags_list ) {
@@ -221,7 +237,7 @@ if ( ! function_exists( 'affl_archive_cats_tags' ) ) {
 				printf( '<span class="tags-links">' . esc_html__( '%1$s', 'affl' ) . '</span>', $tags_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 
-			if ( $categories_list || $tags_list ) { echo "</div>\n"; }
+			if ( $cats_list || $tags_list ) { echo "</div>\n"; }
 		}
 	}
 } //endif

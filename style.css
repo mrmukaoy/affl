@@ -751,11 +751,14 @@ textarea {
       align-items: stretch; }
   .articles-wrapper .post {
     background: #384f5b;
-    width: 24%; }
+    width: 30%;
+    margin-bottom: 2.5em; }
     .articles-wrapper .post .content {
-      padding: 1.5em 1.786em 1.786em; }
+      position: relative;
+      padding: 1.5em 1.786em 1.786em;
+      height: 100%; }
     .articles-wrapper .post.has-post-thumbnail {
-      width: 48%; }
+      width: 65%; }
       .articles-wrapper .post.has-post-thumbnail .content {
         width: 50%;
         float: left; }
@@ -773,7 +776,7 @@ textarea {
     color: rgba(255, 255, 255, 0.7);
     opacity: .7;
     font-size: .85714em;
-    line-height: 1.25; }
+    line-height: 1.5; }
     .articles-wrapper .byline a,
     .articles-wrapper .posted-on a,
     .articles-wrapper .cat-links a,
@@ -795,6 +798,9 @@ textarea {
   .articles-wrapper .cats-tags {
     padding-top: 1.2em; }
   .articles-wrapper .clickthrough {
+    position: absolute;
+    bottom: 1em;
+    margin-bottom: 0;
     text-transform: uppercase;
     letter-spacing: 4.5px; }
 
