@@ -40,8 +40,64 @@
 
 	.post {
 		background: $background-highlight;
-		width: 30%;
-		padding: 1.5em 1.786em 1.786em;
+		width: 24%;
+
+		.content {
+			padding: 1.5em 1.786em 1.786em;
+		}
+
+		&.has-post-thumbnail {
+			width: 48%;
+
+			.content {
+				width: 50%;
+				float: left;
+			}
+		}
+
+		.thumbnail {
+			display: block;
+			width: 50%;
+			height: 100%;
+			float: right;
+			background-size: cover;
+		}
+	}
+
+	.byline,
+	.posted-on,
+	.cat-links,
+	.tags-links {
+		display: block;
+		color: rgba(255,255,255,0.7);
+		opacity: .7;
+		font-size: .85714em;
+		line-height: 1.25;
+
+		a {
+			color: rgba(255,255,255,0.7);
+			opacity: inherit;
+			text-decoration: none;
+
+			&:hover,
+			&:focus {
+				color: #fff;
+				text-decoration: underline;
+			}
+		}
+	}
+
+	.vcard {
+		font-weight: bold;
+	}
+
+	.cats-tags {
+		padding-top: 1.2em;
+	}
+
+	.clickthrough {
+		text-transform: uppercase;
+		letter-spacing: 4.5px;
 	}
 }
 
@@ -51,12 +107,14 @@
 	letter-spacing: normal;
 	line-height: 1.25;
 }
+
 h1.entry-title {
 	font-size: 5em;
 }
 
 h2.entry-title {
 	font-size: 1.5em;
+	margin: 0.25em 0 1.5em;
 }
 
 .single .post-main {
