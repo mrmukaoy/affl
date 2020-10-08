@@ -39,8 +39,17 @@ body {
 .site-main {
 	padding-bottom: 3em;
 	max-width: 63em;
-	padding: 0 80px;
+	padding: 0 80px 130px;
 	margin: 0 auto;
+
+	/* these coincide with height of .site-footer__spacer */
+	@media (min-width:600px) {
+		padding-bottom: 110px;
+	}
+
+	@media (min-width:900px) {
+		padding-bottom: 80px;
+	}
 
 	.blog &,
 	.archive & {

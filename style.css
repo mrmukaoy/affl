@@ -427,7 +427,7 @@ body {
   line-height: 1.929; }
 
 .site {
-  min-height: 100%; }
+  min-height: calc(100vh - 80px); }
 
 .site-header {
   position: relative;
@@ -447,8 +447,15 @@ body {
 .site-main {
   padding-bottom: 3em;
   max-width: 63em;
-  padding: 0 80px;
-  margin: 0 auto; }
+  padding: 0 80px 130px;
+  margin: 0 auto;
+  /* these coincide with height of .site-footer__spacer */ }
+  @media (min-width: 600px) {
+    .site-main {
+      padding-bottom: 110px; } }
+  @media (min-width: 900px) {
+    .site-main {
+      padding-bottom: 80px; } }
   .blog .site-main,
   .archive .site-main {
     max-width: 75em; }
@@ -707,7 +714,7 @@ textarea {
 
 .post,
 .page {
-  margin: 0 0 1.5em; }
+  margin: 0; }
 
 .updated:not(.published) {
   display: none; }
@@ -887,10 +894,11 @@ h2.entry-title {
   padding-top: 4.5em; }
 
 .site-footer {
-  position: absolute;
+  position: relative;
   bottom: 0;
   filter: url('data:image/svg+xml;\a 	charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur in="SourceAlpha" stdDeviation="30" /><feOffset dx="1" dy="1" result="offsetblur" /><feFlood flood-color="rgba(0,0,0,0.6)" /><feComposite in2="offsetblur" operator="in" /><feMerge><feMergeNode /><feMergeNode in="SourceGraphic" /></feMerge></filter></svg>#filter');
-  filter: drop-shadow(0 0 30px rgba(0, 0, 0, 0.6)); }
+  filter: drop-shadow(0 0 30px rgba(0, 0, 0, 0.6));
+  overflow-x: clip; }
 
 .site-footer .mark {
   margin: 0 auto 32px;
