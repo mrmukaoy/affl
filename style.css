@@ -54,6 +54,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	- Alignments
 
 --------------------------------------------------------------*/
+/**
+ * Clearfix
+ */
 /*--------------------------------------------------------------
 # Generic
 --------------------------------------------------------------*/
@@ -736,73 +739,101 @@ textarea {
   margin: 0 0 1.5em; }
 
 /* POSTS */
-.articles-wrapper {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: row;
-      flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -ms-flex-pack: justify;
-      justify-content: space-between;
-  -ms-flex-line-pack: justify;
-      align-content: space-between;
-  -ms-flex-align: stretch;
-      align-items: stretch; }
-  .articles-wrapper .post {
-    background: #384f5b;
-    width: 30%;
-    margin-bottom: 2.5em; }
-    .articles-wrapper .post .content {
-      position: relative;
-      padding: 1.5em 1.786em 1.786em;
-      height: 100%; }
+@media screen and (min-width: 600px) {
+  .articles-wrapper {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+        flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    -ms-flex-line-pack: justify;
+        align-content: space-between;
+    -ms-flex-align: stretch;
+        align-items: stretch; } }
+
+.articles-wrapper .post {
+  background: #384f5b;
+  width: 100%;
+  margin-bottom: 2.5em; }
+  .articles-wrapper .post:after {
+    content: "";
+    display: table;
+    clear: both; }
+  @media screen and (min-width: 600px) {
+    .articles-wrapper .post {
+      width: 45.5%; } }
+  @media screen and (min-width: 900px) {
+    .articles-wrapper .post {
+      width: 30%; } }
+  .articles-wrapper .post .content {
+    position: relative;
+    padding: 1.5em 1.786em 1.786em;
+    height: 100%; }
+  @media screen and (min-width: 600px) {
     .articles-wrapper .post.has-post-thumbnail {
-      width: 65%; }
+      width: 100%; } }
+  @media screen and (min-width: 900px) {
+    .articles-wrapper .post.has-post-thumbnail {
+      width: 65%; } }
+  .articles-wrapper .post.has-post-thumbnail .content {
+    width: auto; }
+    @media screen and (min-width: 600px) {
       .articles-wrapper .post.has-post-thumbnail .content {
         width: 50%;
-        float: left; }
-    .articles-wrapper .post .thumbnail {
-      display: block;
-      width: 50%;
-      height: 100%;
-      float: right;
-      background-size: cover; }
-  .articles-wrapper .byline,
-  .articles-wrapper .posted-on,
-  .articles-wrapper .cat-links,
-  .articles-wrapper .tags-links {
+        height: 100%;
+        float: left; } }
+  .articles-wrapper .post .thumbnail {
     display: block;
+    width: 100%;
+    height: 15em; }
+    @media screen and (min-width: 600px) {
+      .articles-wrapper .post .thumbnail {
+        width: 50%;
+        float: right;
+        height: 100%;
+        background-size: cover; } }
+
+.articles-wrapper .byline,
+.articles-wrapper .posted-on,
+.articles-wrapper .cat-links,
+.articles-wrapper .tags-links {
+  display: block;
+  color: rgba(255, 255, 255, 0.7);
+  opacity: .7;
+  font-size: .85714em;
+  line-height: 1.5; }
+  .articles-wrapper .byline a,
+  .articles-wrapper .posted-on a,
+  .articles-wrapper .cat-links a,
+  .articles-wrapper .tags-links a {
     color: rgba(255, 255, 255, 0.7);
-    opacity: .7;
-    font-size: .85714em;
-    line-height: 1.5; }
-    .articles-wrapper .byline a,
-    .articles-wrapper .posted-on a,
-    .articles-wrapper .cat-links a,
-    .articles-wrapper .tags-links a {
-      color: rgba(255, 255, 255, 0.7);
-      opacity: inherit;
-      text-decoration: none; }
-      .articles-wrapper .byline a:hover, .articles-wrapper .byline a:focus,
-      .articles-wrapper .posted-on a:hover,
-      .articles-wrapper .posted-on a:focus,
-      .articles-wrapper .cat-links a:hover,
-      .articles-wrapper .cat-links a:focus,
-      .articles-wrapper .tags-links a:hover,
-      .articles-wrapper .tags-links a:focus {
-        color: #fff;
-        text-decoration: underline; }
-  .articles-wrapper .vcard {
-    font-weight: bold; }
-  .articles-wrapper .cats-tags {
-    padding-top: 1.2em; }
-  .articles-wrapper .clickthrough {
-    position: absolute;
-    bottom: 1em;
-    margin-bottom: 0;
-    text-transform: uppercase;
-    letter-spacing: 4.5px; }
+    opacity: inherit;
+    text-decoration: none; }
+    .articles-wrapper .byline a:hover, .articles-wrapper .byline a:focus,
+    .articles-wrapper .posted-on a:hover,
+    .articles-wrapper .posted-on a:focus,
+    .articles-wrapper .cat-links a:hover,
+    .articles-wrapper .cat-links a:focus,
+    .articles-wrapper .tags-links a:hover,
+    .articles-wrapper .tags-links a:focus {
+      color: #fff;
+      text-decoration: underline; }
+
+.articles-wrapper .vcard {
+  font-weight: bold; }
+
+.articles-wrapper .cats-tags {
+  padding-top: 1.2em; }
+
+.articles-wrapper .clickthrough {
+  position: absolute;
+  bottom: 1em;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  letter-spacing: 4.5px; }
 
 .entry-title {
   color: #ffffff;

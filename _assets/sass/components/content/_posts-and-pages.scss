@@ -31,17 +31,30 @@
 /* POSTS */
 // POST-ARCHIVE
 .articles-wrapper {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	align-content: space-between;
-	align-items: stretch;
+
+	@media screen and (min-width: 600px) {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-content: space-between;
+		align-items: stretch;
+	}
+
 
 	.post {
 		background: $background-highlight;
-		width: 30%;
+		width: 100%;
 		margin-bottom: 2.5em;
+		@include clearfix();
+
+		@media screen and (min-width: 600px) {
+			width: 45.5%;
+		}
+
+		@media screen and (min-width: 900px) {
+			width: 30%;
+		}
 
 		.content {
 			position: relative;
@@ -50,20 +63,37 @@
 		}
 
 		&.has-post-thumbnail {
-			width: 65%;
+
+			@media screen and (min-width: 600px) {
+				width: 100%;
+			}
+
+			@media screen and (min-width: 900px) {
+				width: 65%;
+			}
 
 			.content {
-				width: 50%;
-				float: left;
+				width: auto;
+
+				@media screen and (min-width: 600px) {
+					width: 50%;
+					height: 100%;
+					float: left;
+				}
 			}
 		}
 
 		.thumbnail {
 			display: block;
-			width: 50%;
-			height: 100%;
-			float: right;
-			background-size: cover;
+			width: 100%;
+			height: 15em;
+
+			@media screen and (min-width: 600px) {
+				width: 50%;
+				float: right;
+				height: 100%;
+				background-size: cover;
+			}
 		}
 	}
 
