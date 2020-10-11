@@ -38,7 +38,8 @@ if ( ! function_exists( 'affl_setup' ) ) :
 		 * hard-coded <title> tag in the document head, and expect WordPress to
 		 * provide it for us.
 		 */
-		add_theme_support( 'title-tag' );
+		// We want a specialized way to handle title tag, not what someone else thinks we should have
+		// add_theme_support( 'title-tag' );
 
 		/*
 		 * Enable support for Post Thumbnails on posts and pages.

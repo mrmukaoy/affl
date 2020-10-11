@@ -21,6 +21,27 @@
 	<link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/_assets/images/favicon/favicon-32x32.png?v=20160912" sizes="32x32">
 	<link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/_assets/images/favicon/favicon-16x16.png?v=20160912" sizes="16x16">
 
+<title><?php if ( function_exists( 'is_tag' ) && is_tag() ) {
+	echo 'Tag Archive for &quot;' . $tag . '&quot; | ';
+} elseif ( is_archive() ) {
+	wp_title( '' ); echo ' Archive | ';
+} elseif ( is_search() ) {
+	echo 'Search for &quot;' . wp_specialchars( $s ) . '&quot; | ';
+} elseif ( ! ( is_404() ) && ( is_single() ) || ( is_page() && ! is_front_page() ) ) {
+	wp_title( '' );
+	echo ' | ';
+} elseif ( is_404() ) {
+	echo 'Not Found | ';
+}
+if ( is_front_page() ) {
+	bloginfo( 'name' );
+	echo ' &bull; ';
+	bloginfo( 'description' );
+} else {
+	bloginfo( 'name' );
+} ?></title>
+
+
 	<?php wp_head(); ?>
 </head>
 
