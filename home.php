@@ -17,11 +17,24 @@ get_header();
 
 	<main id="primary" class="site-main">
 
+		<?php // try to find the photo for post_thumbnail on the blog home page, since once you assign a page to be blog home, you can no longer assign an image.
+
+		// HOW TO: First, assign a featured image to the page
+		// THEN: assign that page as BLog home.
+		$blog_id = get_option( 'page_for_posts' );
+		$image_url = get_the_post_thumbnail_url($blog_id);
+		?>
+
+		<div class="large-post-thumbnail-wrapper" style="background-image: url(<?php echo $image_url; ?>);">
+			<div class="mask"></div>
+		</div><!-- .large-post-thumbnail -->
+
 		<?php
 		if ( have_posts() ) {
 			if ( ! is_front_page() ) {
 				?>
 				<header>
+					<p class="subtitle">Blog</p>
 					<h1 class="page-title"><?php single_post_title(); ?></h1>
 				</header>
 				<?php

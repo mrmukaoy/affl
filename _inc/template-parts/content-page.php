@@ -31,11 +31,11 @@
 
 	<?php if ( get_edit_post_link() ) : ?>
 		<footer class="entry-footer">
-			<?php
+			<?php /*
 			edit_post_link(
 				sprintf(
 					wp_kses(
-						/* translators: %s: Name of current post. Only visible to screen readers */
+						// translators: %s: Name of current post. Only visible to screen readers
 						__( 'Edit <span class="screen-reader-text">%s</span>', 'affl' ),
 						array(
 							'span' => array(
@@ -48,7 +48,7 @@
 				'<span class="edit-link">',
 				'</span>'
 			);
-			?>
+			*/ ?>
 		</footer><!-- .entry-footer -->
 	<?php endif; ?>
 </article><!-- #post-<?php the_ID(); ?> -->

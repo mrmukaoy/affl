@@ -29,6 +29,10 @@
 
 .entry-header	{
 	padding-top: 1.5em;
+
+	.single & {
+		padding-top: 0;
+	}
 }
 
 .page-content,

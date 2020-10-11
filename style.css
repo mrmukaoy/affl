@@ -783,6 +783,8 @@ button.site-nav__btn {
 
 .entry-header {
   padding-top: 1.5em; }
+  .single .entry-header {
+    padding-top: 0; }
 
 .page-content,
 .entry-content,

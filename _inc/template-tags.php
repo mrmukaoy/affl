@@ -25,6 +25,22 @@ function custom_featured_image() {
 	return $image_src;
 }
 
+/**
+ * Get URL of image from its file
+ */
+function get_attachment_url_by_slug( $slug ) {
+	$args = array(
+		'post_type'      => 'attachment',
+		'name'           => sanitize_title( $slug ),
+		'posts_per_page' => 1,
+		'post_status'    => 'inherit',
+	);
+	$_header = get_posts( $args );
+	$image = $_header ? array_pop( $_header ) : null;
+	return $image ? wp_get_attachment_url( $image->ID ) : '';
+}
+
+
 if ( ! function_exists( 'affl_posted_on' ) ) :
 	/**
 	 * Prints HTML with meta information for the current post-date/time.
@@ -111,10 +127,11 @@ if ( ! function_exists( 'affl_entry_footer' ) ) :
 			echo '</span>';
 		}
 
+		/*
 		edit_post_link(
 			sprintf(
 				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
+					// translators: %s: Name of current post. Only visible to screen readers
 					__( 'Edit <span class="screen-reader-text">%s</span>', 'affl' ),
 					array(
 						'span' => array(
@@ -127,6 +144,7 @@ if ( ! function_exists( 'affl_entry_footer' ) ) :
 			'<span class="edit-link">',
 			'</span>'
 		);
+		*/
 	}
 endif;
 
@@ -186,7 +204,7 @@ if ( ! function_exists( 'affl_large_thumbnail' ) ) :
 		if ( is_singular() ) :
 			?>
 
-			<div class="large-post-thumbnail-wrapper" style="background-image: url(<?php the_post_thumbnail_url(); ?>); background-size: cover;">
+			<div class="large-post-thumbnail-wrapper" style="background-image: url(<?php the_post_thumbnail_url(); ?>);">
 				<div class="mask"></div>
 			</div><!-- .large-post-thumbnail -->
 
