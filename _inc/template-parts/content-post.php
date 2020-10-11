@@ -22,10 +22,14 @@
 	<div class="post-main">
 		<header class="entry-header">
 			<div class="entry-meta">
-				<?php
-				affl_posted_on();
-				affl_posted_by();
-				?>
+				<div class="who-when">
+					<?php
+					affl_posted_by();
+					affl_posted_on();
+					?>
+				</div>
+				<div class="cats-tags">
+				</div>
 			</div><!-- .entry-meta -->
 		</header><!-- .entry-header -->
 

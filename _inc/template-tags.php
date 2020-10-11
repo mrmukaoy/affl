@@ -61,7 +61,7 @@ if ( ! function_exists( 'affl_posted_on' ) ) :
 
 		$posted_on = sprintf(
 			/* translators: %s: post date. */
-			esc_html_x( 'Posted on %s', 'post date', 'affl' ),
+			esc_html_x( '%s', 'post date', 'affl' ),
 			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 
@@ -77,7 +77,7 @@ if ( ! function_exists( 'affl_posted_by' ) ) :
 	function affl_posted_by() {
 		$byline = sprintf(
 			/* translators: %s: post author. */
-			esc_html_x( 'by %s', 'post author', 'affl' ),
+			esc_html_x( 'Posted by %s', 'post author', 'affl' ),
 			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 

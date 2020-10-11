@@ -930,6 +930,18 @@ h2 {
 .single .post-main {
   background: #15232a;
   padding: 2.142em 5em; }
+  .single .post-main .entry-meta {
+    color: rgba(255, 255, 255, 0.7); }
+    .single .post-main .entry-meta a {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none; }
+      .single .post-main .entry-meta a:hover, .single .post-main .entry-meta a:focus {
+        color: #f7bf3b;
+        text-decoration: underline; }
+    .single .post-main .entry-meta .byline {
+      padding-right: 2em; }
+      .single .post-main .entry-meta .byline .author {
+        font-weight: bold; }
 
 /* PAGES */
 .page-title {

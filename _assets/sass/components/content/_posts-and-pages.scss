@@ -203,6 +203,29 @@ h2 {
 .single .post-main {
 	background: $background;
 	padding: 2.142em 5em;
+
+	.entry-meta {
+		color: rgba(255, 255, 255, 0.7);
+
+		a {
+			color: rgba(255, 255, 255, 0.7);
+			text-decoration: none;
+
+			&:hover,
+			&:focus {
+				color: $color__link;
+				text-decoration: underline;
+			}
+		}
+
+		.byline {
+			padding-right: 2em;
+
+			.author {
+				font-weight: bold;
+			}
+		}
+	}
 }
 
 /* PAGES */
