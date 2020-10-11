@@ -186,7 +186,9 @@ if ( ! function_exists( 'affl_large_thumbnail' ) ) :
 		if ( is_singular() ) :
 			?>
 
-			<div class="large-post-thumbnail-wrapper" style="background-image: url(<?php the_post_thumbnail_url(); ?>); background-size: cover;"></div><!-- .large-post-thumbnail -->
+			<div class="large-post-thumbnail-wrapper" style="background-image: url(<?php the_post_thumbnail_url(); ?>); background-size: cover;">
+				<div class="mask"></div>
+			</div><!-- .large-post-thumbnail -->
 
 		<?php else : ?>
 

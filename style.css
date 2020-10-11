@@ -926,6 +926,13 @@ h2.entry-title {
   height: 50em;
   background-size: cover;
   background-position: center center; }
+  .large-post-thumbnail-wrapper .mask {
+    width: 100%;
+    height: 100%;
+    background-color: #243741;
+    opacity: 0.8; }
+    .home .large-post-thumbnail-wrapper .mask {
+      opacity: 0; }
 
 /** SLANT **/
 .slant {
