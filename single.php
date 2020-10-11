@@ -33,6 +33,10 @@ get_header();
 		endwhile; // End of the loop.
 		?>
 
+		<aside id="related" class="widget-area">
+			<?php dynamic_sidebar( 'sidebar-2' ); ?>
+		</aside><!-- #secondary -->
+
 	</main><!-- #main -->
 
 <?php

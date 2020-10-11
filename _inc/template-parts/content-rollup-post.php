@@ -16,7 +16,7 @@
 				<?php
 				affl_archive_posted_by();
 				affl_archive_posted_on();
-				affl_archive_cats_tags();
+				affl_archive_cats_tags( get_the_ID() );
 				?>
 			</div><!-- .entry-meta -->
 		</header><!-- .entry-header -->

@@ -260,7 +260,7 @@ if ( ! function_exists( 'affl_archive_cats_tags' ) ) {
 	/**
 	 * Prints HTML with meta information for the categories, tags and comments.
 	 */
-	function affl_archive_cats_tags() {
+	function affl_archive_cats_tags( $pid ) {
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
 			// categories

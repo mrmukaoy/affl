@@ -1,3 +1,5 @@
+$yellow: #f7bf3b;
+
 $background: #15232a;
 $background-highlight: #384f5b;
 $background-screen: #f1f1f1;
@@ -9,8 +11,8 @@ $background-ins: #fff9c0;
 $text-screen: #21759b;
 $text-input: #666;
 $text-input-focus: #111;
-$color__link: #f7bf3b; //yellow
-$color__link-visited: #f7bf3b;
+$color__link: $yellow;
+$color__link-visited: $yellow;
 $color__link-hover: #dba62a;
 $text-main: #ffffff;
 

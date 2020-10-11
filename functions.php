@@ -134,6 +134,18 @@ function affl_widgets_init() {
 			'after_title'   => '</h2>',
 		)
 	);
+
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Post Footer', 'affl' ),
+			'id'            => 'sidebar-2',
+			'description'   => esc_html__( 'Add widgets here.', 'affl' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
 }
 add_action( 'widgets_init', 'affl_widgets_init' );
 
@@ -231,6 +243,15 @@ require get_template_directory() . '/_inc/custom-header.php';
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/_inc/template-tags.php';
+
+/**
+ * Custom widgets
+ */
+require get_template_directory() . '/_inc/class-wp-widget-afflecto-recent-posts.php';
+function affl_load_widgets() {
+	register_widget( 'WP_Widget_AfflectoMM_Recent_Posts' );
+}
+add_action( 'widgets_init', 'affl_load_widgets' );
 
 /**
  * Functions which enhance the theme by hooking into WordPress.

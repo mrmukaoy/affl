@@ -4,6 +4,12 @@
 	@media (min-width: 900px) {
 		padding-top: 13.5em;
 	}
+
+	/** PAGE/POST COLUMN MODIFIERS **/
+	.narrow {
+		max-width: 40.25em;
+		margin: 0 auto;
+	}
 }
 
 .sticky {
@@ -21,10 +27,29 @@
 	display: none;
 }
 
+.entry-header	{
+	padding-top: 1.5em;
+}
+
 .page-content,
 .entry-content,
 .entry-summary {
 	margin: 1.5em 0 0;
+
+	h3 {
+		font-size: 1.714em;
+		letter-spacing: 1.5px;
+		line-height: normal;
+		color: $yellow;
+	}
+
+	.subtitle {
+		font-size: 1em;
+		letter-spacing: 1.81px;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
 }
 
 .page-links {
@@ -60,10 +85,18 @@
 			width: 30%;
 		}
 
+		a {
+			text-decoration: none;
+		}
+
 		.content {
 			position: relative;
 			padding: 1.5em 1.786em 1.786em;
 			height: 100%;
+
+			.entry-header {
+				padding-top: 0;
+			}
 		}
 
 		&.has-post-thumbnail {
@@ -128,8 +161,8 @@
 		font-weight: bold;
 	}
 
-	.cats-tags {
-		padding-top: 1.2em;
+	.posted-on {
+		padding-bottom: 1.2em;
 	}
 
 	.clickthrough {
@@ -152,9 +185,15 @@ h1.entry-title {
 	font-size: 5em;
 }
 
-h2.entry-title {
-	font-size: 1.5em;
-	margin: 0.25em 0 1.5em;
+h2 {
+	font-size: 2.571em;
+	line-height: normal;
+	margin-bottom: .6667em;
+
+	.entry-title {
+		font-size: 1.5em;
+		margin: 0.25em 0 1.5em;
+	}
 }
 
 .single .post-main {
