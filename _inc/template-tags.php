@@ -7,6 +7,24 @@
  * @package afflectomm
  */
 
+ /**
+  * Custom Featured Image
+  */
+function custom_featured_image() {
+	// ID of current page/post
+	$queried_obj = get_queried_object();
+	$image_src = '';
+
+	// Get the featured image ID
+	$image_id = get_post_thumbnail_id( $queried_obj->ID );
+	if ( $image_id ) {
+		// Get the URL for the full sized image
+		$image_src = wp_get_attachment_url( $image_id );
+	}
+
+	return $image_src;
+}
+
 if ( ! function_exists( 'affl_posted_on' ) ) :
 	/**
 	 * Prints HTML with meta information for the current post-date/time.
@@ -130,6 +148,45 @@ if ( ! function_exists( 'affl_post_thumbnail' ) ) :
 			<div class="post-thumbnail">
 				<?php the_post_thumbnail(); ?>
 			</div><!-- .post-thumbnail -->
+
+		<?php else : ?>
+
+			<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
+				<?php
+					the_post_thumbnail(
+						'post-thumbnail',
+						array(
+							'alt' => the_title_attribute(
+								array(
+									'echo' => false,
+								)
+							),
+						)
+					);
+				?>
+			</a>
+
+			<?php
+		endif; // End is_singular().
+	}
+endif;
+
+if ( ! function_exists( 'affl_large_thumbnail' ) ) :
+	/**
+	 * Displays an optional post thumbnail, as a very large background image.
+	 *
+	 * Wraps the post thumbnail in an anchor element on index views, or a div
+	 * element when on single views.
+	 */
+	function affl_large_thumbnail() {
+		if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
+			return;
+		}
+
+		if ( is_singular() ) :
+			?>
+
+			<div class="large-post-thumbnail-wrapper" style="background-image: url(<?php the_post_thumbnail_url(); ?>); background-size: cover;"></div><!-- .large-post-thumbnail -->
 
 		<?php else : ?>
 

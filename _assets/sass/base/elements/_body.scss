@@ -23,6 +23,12 @@ body {
 	@media (min-width:900px) {
 		min-height: calc(100vh - 80px);
 	}
+
+	&.has_thumbnail {
+		background-position: top center;
+		background-repeat: no-repeat;
+		background-size: 100%;
+	}
 }
 
 .site-header {
