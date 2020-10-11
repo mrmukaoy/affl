@@ -698,14 +698,14 @@ textarea {
 }
 
 /* Small menu. */
-.menu-toggle,
+.site-nav__btn,
 .main-navigation.toggled ul {
 	display: block;
 }
 
 @media screen and (min-width: 37.5em) {
 
-	.menu-toggle {
+	.site-nav__btn {
 		display: none;
 	}
 

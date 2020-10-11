@@ -6,13 +6,14 @@
  */
 ( function() {
 	const siteNavigation = document.getElementById( 'site-navigation' );
+	const siteHeader = document.getElementById( 'masthead' );
 
-	// Return early if the navigation don't exist.
+	// Return early if the navigation doesn't exist.
 	if ( ! siteNavigation ) {
 		return;
 	}
 
-	const button = siteNavigation.getElementsByTagName( 'button' )[ 0 ];
+	const button = document.getElementById( 'menuButton' );
 
 	// Return early if the button don't exist.
 	if ( 'undefined' === typeof button ) {
@@ -43,6 +44,7 @@
 	} );
 
 	// Remove the .toggled class and set aria-expanded to false when the user clicks outside the navigation.
+	/*
 	document.addEventListener( 'click', function( event ) {
 		const isClickInside = siteNavigation.contains( event.target );
 
@@ -51,6 +53,7 @@
 			button.setAttribute( 'aria-expanded', 'false' );
 		}
 	} );
+	*/
 
 	// Get all the link elements within the menu.
 	const links = menu.getElementsByTagName( 'a' );

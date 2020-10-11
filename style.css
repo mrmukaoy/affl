@@ -457,7 +457,7 @@ body {
 .site-main {
   padding-bottom: 3em;
   max-width: 63em;
-  padding: 0 80px 160px;
+  padding: 0 16px 160px;
   margin: 0 auto;
   /* these align with height of .site-footer__spacer */ }
   @media (min-width: 600px) {
@@ -465,7 +465,7 @@ body {
       padding-bottom: 140px; } }
   @media (min-width: 900px) {
     .site-main {
-      padding-bottom: 110px; } }
+      padding: 0 80px 110px; } }
   .blog .site-main,
   .archive .site-main {
     max-width: 75em; }
@@ -610,11 +610,16 @@ textarea {
   display: inline-block;
   width: auto;
   position: absolute;
-  top: 0;
-  right: 2.14em; }
+  top: 14.5px;
+  right: 0;
+  padding-right: 0; }
   @media (min-width: 900px) {
     .main-navigation {
-      top: 32px; } }
+      top: 32px;
+      right: 2.14em; } }
+  .main-navigation.toggled {
+    padding-right: 58px;
+    animation: nav-out cubic-bezier(0.165, 0.84, 0.44, 1) 0.15s; }
   .main-navigation ul {
     display: none;
     list-style: none;
@@ -662,6 +667,7 @@ textarea {
 		}
 */ }
   .main-navigation li {
+    display: inline-block;
     position: relative;
     padding: 0 .714em; }
   .main-navigation a {
@@ -671,24 +677,57 @@ textarea {
     color: #fff;
     font-size: .85714em;
     text-transform: uppercase; }
+    .main-navigation a:hover, .main-navigation a:focus {
+      color: #dba62a; }
   .main-navigation .current_page_item > a,
   .main-navigation .current-menu-item > a,
   .main-navigation .current_page_ancestor > a,
   .main-navigation .current-menu-ancestor > a {
     color: #f7bf3b; }
 
+@keyframes nav-out {
+  0% {
+    opacity: 0;
+    transform: translateX(100vw); }
+  to {
+    opacity: 1;
+    transform: translateX(0); } }
+
 /* Small menu. */
-.menu-toggle,
+.site-nav__btn,
 .main-navigation.toggled ul {
   display: block; }
 
-@media screen and (min-width: 37.5em) {
-  .menu-toggle {
-    display: none; }
+@media screen and (min-width: 900px) {
   .main-navigation ul {
     display: -ms-flexbox;
     display: flex; } }
 
+/** MOBILE NAV **/
+button.site-nav__btn {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 58px;
+  padding: 0 1em;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  transition: opacity 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  z-index: 10; }
+  button.site-nav__btn:hover {
+    cursor: pointer; }
+  @media screen and (min-width: 900px) {
+    button.site-nav__btn {
+      display: none; } }
+  button.site-nav__btn svg {
+    color: #d8d8d8; }
+
+/** OTHER NAVIGATION ELEMENTS **/
 .site-main .comment-navigation, .site-main
 .posts-navigation, .site-main
 .post-navigation {
@@ -856,6 +895,17 @@ h2.entry-title {
   font-size: 5.5em;
   line-height: 1.04; }
 
+/* HOME PAGE */
+.home-logo {
+  width: 100%;
+  max-width: 414px;
+  margin: 0 auto;
+  padding: 14em 44px 0; }
+  @media screen and (min-width: 600px) {
+    .home-logo {
+      padding-right: 0;
+      padding-left: 0; } }
+
 /* Comments
 --------------------------------------------- */
 .comment-content a {
@@ -867,24 +917,36 @@ h2.entry-title {
 /* Header
 --------------------------------------------- */
 .mark {
-  margin: 0 auto;
+  margin: 20px 23px 0;
   width: 34px;
   height: 40px; }
+  @media (max-width: 899px) {
+    .mark {
+      margin: 8px 23px; }
+      .site-header.menu-is-open .mark {
+        transition: transform 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+        transition: transform 0.2s cubic-bezier(0.165, 0.84, 0.44, 1), -webkit-transform 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+        -ms-transform: translateX(33px);
+            transform: translateX(33px); } }
 
 .mark--link {
   display: block; }
 
-@media (max-width: 899px) {
-  .mark--animate {
-    -ms-transform: translateX(50vw);
-        transform: translateX(50vw);
-    margin: 0 0 0 -17px; } }
-
+/*
+.mark--animate {
+	@media (max-width: 899px) {
+		-webkit-transform: translateX(50vw);
+		transform: translateX(50vw);
+		margin: 0 0 0 -17px;
+	}
+}
+*/
 .site-header {
   position: fixed;
   z-index: 2;
-  padding: 8px 0;
+  padding: 0;
   width: 100%;
+  height: 56px;
   background-color: rgba(21, 35, 41, 0.4);
   box-shadow: 0 3px 15px 0 rgba(0, 0, 0, 0.2); }
   @media (min-width: 900px) {
@@ -892,45 +954,8 @@ h2.entry-title {
       position: absolute;
       background-color: transparent;
       box-shadow: none;
-      height: 80px;
-      padding: 0; }
-      .site-header .mark {
-        margin: 20px 23px 0; } }
-
-@media (max-width: 899px) {
-  .site-header.menu-is-open .mark {
-    transition: transform 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
-    transition: transform 0.2s cubic-bezier(0.165, 0.84, 0.44, 1), -webkit-transform 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
-    -ms-transform: translateX(33px);
-        transform: translateX(33px); }
-  .site-header.menu-is-open .site-nav__btn {
-    opacity: 0; }
-  .site-header.menu-is-open .site-nav {
-    display: -ms-flexbox;
-    display: flex; }
-  .site-header.menu-is-open .nav-link {
-    animation: a cubic-bezier(0.165, 0.84, 0.44, 1) 0.15s;
-    animation-fill-mode: both; }
-  .site-header.menu-is-open .nav-link:nth-child(2) {
-    animation-delay: 50ms; }
-  .site-header.menu-is-open .nav-link:nth-child(3) {
-    animation-delay: .15s; }
-  .site-header.menu-is-open .nav-link:nth-child(4) {
-    animation-delay: .25s; }
-  .site-header.menu-is-open .nav-link:nth-child(5) {
-    animation-delay: .35s; }
-  .site-header.menu-is-closing .nav-link {
-    animation: a cubic-bezier(0.165, 0.84, 0.44, 1) 0.15s;
-    animation-fill-mode: both;
-    animation-direction: reverse; }
-  .site-header.menu-is-closing .nav-link:nth-child(2) {
-    animation-delay: 50ms; }
-  .site-header.menu-is-closing .nav-link:nth-child(3) {
-    animation-delay: .15s; }
-  .site-header.menu-is-closing .nav-link:nth-child(4) {
-    animation-delay: .25s; }
-  .site-header.menu-is-closing .nav-link:nth-child(5) {
-    animation-delay: .35s; } }
+      padding: 0;
+      height: 80px; } }
 
 /* Footer
 --------------------------------------------- */
@@ -970,53 +995,34 @@ h2.entry-title {
   margin-top: -7vw; }
 
 /** SOCIAL MEDIA LINKS **/
-.site-footer .social {
+.social {
   text-align: center;
   list-style-type: none;
   margin: 0;
   padding: 0; }
-  .site-footer .social li {
+  .social li {
     display: inline-block;
     margin: 0 .5714rem;
     padding: 0; }
-    .site-footer .social li a.social__link {
+    .social li a.social__link {
       text-decoration: none;
       display: block;
       width: 28px;
-      height: 28px;
-      /*
-			&:focus,
-			&:hover,
-			&:active {
-				opacity: 1;
-			}
-
-
-			&:focus,
-			&:hover {
-				.social__default {
-					opacity: 0;
-				}
-
-				.social__main {
-					fill: #ffffff;
-				}
-			}
-*/ }
-      .site-footer .social li a.social__link .social__default {
+      height: 28px; }
+      .social li a.social__link .social__default {
         opacity: .6;
         fill: #d9d9d8; }
-      .site-footer .social li a.social__link .social__active {
+      .social li a.social__link .social__active {
         opacity: 0; }
-      .site-footer .social li a.social__link .social__main {
+      .social li a.social__link .social__main {
         fill: #15232a; }
-      .site-footer .social li a.social__link:focus {
+      .social li a.social__link:focus {
         outline: 0; }
-      .site-footer .social li a.social__link:focus .social__default, .site-footer .social li a.social__link:hover .social__default, .site-footer .social li a.social__link:active .social__default {
+      .social li a.social__link:focus .social__default, .social li a.social__link:hover .social__default, .social li a.social__link:active .social__default {
         opacity: 0; }
-      .site-footer .social li a.social__link:focus .social__active, .site-footer .social li a.social__link:hover .social__active, .site-footer .social li a.social__link:active .social__active {
+      .social li a.social__link:focus .social__active, .social li a.social__link:hover .social__active, .social li a.social__link:active .social__active {
         opacity: 1; }
-      .site-footer .social li a.social__link:focus .social__main, .site-footer .social li a.social__link:hover .social__main, .site-footer .social li a.social__link:active .social__main {
+      .social li a.social__link:focus .social__main, .social li a.social__link:hover .social__main, .social li a.social__link:active .social__main {
         fill: #ffffff; }
 
 /* Widgets

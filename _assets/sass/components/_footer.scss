@@ -41,7 +41,7 @@
 }
 
 /** SOCIAL MEDIA LINKS **/
-.site-footer .social {
+.social {
 	text-align: center;
 	list-style-type: none;
 	margin: 0;
@@ -88,25 +88,6 @@
 					fill: #ffffff;
 				}
 			}
-/*
-			&:focus,
-			&:hover,
-			&:active {
-				opacity: 1;
-			}
-
-
-			&:focus,
-			&:hover {
-				.social__default {
-					opacity: 0;
-				}
-
-				.social__main {
-					fill: #ffffff;
-				}
-			}
-*/
 		}
 	}
 }
