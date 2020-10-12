@@ -49,3 +49,61 @@ ins {
 big {
 	font-size: 125%;
 }
+
+.wp-block-pullquote {
+	margin: 3.5em 0;
+	padding: 0;
+	text-align: left;
+
+	blockquote {
+		margin: 0 42px 0 49px;
+		position: relative;
+
+		@media (min-width: 900px) {
+			margin: 0 65px 0 72px;
+		}
+
+		&:before,
+		&:after {
+			content: '';
+			background-size: 35px 27px;
+			display: inline-block;
+			width: 35px;
+			height: 27px;
+			position: absolute;
+
+			@media (min-width: 900px) {
+				background-size: 58px 44px;
+				width: 58px;
+				height: 44px;
+			}
+		}
+
+		&:before {
+			background-image: url(_assets/images/ldquo.png);
+			top: 7px;
+			left: -49px;
+
+			@media (min-width: 900px) {
+				left: -72px;
+			}
+		}
+
+		&:after {
+			background-image: url(_assets/images/rdquo.png);
+			bottom: 7px;
+			right: -42px;
+
+			@media (min-width: 900px) {
+				right: -65px;
+			}
+		}
+	}
+
+	p {
+		font-size: 1.714em;
+		line-height: 1.792;
+		font-style: italic;
+		letter-spacing: 0.9px;
+	}
+}

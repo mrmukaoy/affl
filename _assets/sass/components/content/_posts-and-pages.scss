@@ -38,7 +38,11 @@
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: 1.5em 0 0;
+	margin: 60px 40px 0;
+
+	@media (min-width: 900px) {
+		margin: 80px 80px 0;
+	}
 
 	h2 {
 		font-size: 1.714em;
@@ -61,6 +65,10 @@
 	.callout {
 		color: $yellow;
 	}
+}
+
+.blog .page-title {
+	padding-top: .3896em;
 }
 
 .subtitle {
@@ -242,10 +250,15 @@ h1.entry-title {
 
 .single .post-main {
 	background: $background;
-	padding: 2.142em 5em;
+	padding: 2.142em 0;
+
+	.entry-header {
+		margin: 0 40px;
+	}
 
 	.entry-meta {
 		color: rgba(255, 255, 255, 0.7);
+		position: relative;
 
 		a {
 			color: rgba(255, 255, 255, 0.7);
@@ -265,6 +278,14 @@ h1.entry-title {
 				font-weight: bold;
 			}
 		}
+	}
+
+	.who-when {
+		display: inline-block;
+	}
+	.cats-tags {
+		display: inline-block;
+		float: right;
 	}
 }
 

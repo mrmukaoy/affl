@@ -419,6 +419,48 @@ ins {
 big {
   font-size: 125%; }
 
+.wp-block-pullquote {
+  margin: 3.5em 0;
+  padding: 0;
+  text-align: left; }
+  .wp-block-pullquote blockquote {
+    margin: 0 42px 0 49px;
+    position: relative; }
+    @media (min-width: 900px) {
+      .wp-block-pullquote blockquote {
+        margin: 0 65px 0 72px; } }
+    .wp-block-pullquote blockquote:before, .wp-block-pullquote blockquote:after {
+      content: '';
+      background-size: 35px 27px;
+      display: inline-block;
+      width: 35px;
+      height: 27px;
+      position: absolute; }
+      @media (min-width: 900px) {
+        .wp-block-pullquote blockquote:before, .wp-block-pullquote blockquote:after {
+          background-size: 58px 44px;
+          width: 58px;
+          height: 44px; } }
+    .wp-block-pullquote blockquote:before {
+      background-image: url(_assets/images/ldquo.png);
+      top: 7px;
+      left: -49px; }
+      @media (min-width: 900px) {
+        .wp-block-pullquote blockquote:before {
+          left: -72px; } }
+    .wp-block-pullquote blockquote:after {
+      background-image: url(_assets/images/rdquo.png);
+      bottom: 7px;
+      right: -42px; }
+      @media (min-width: 900px) {
+        .wp-block-pullquote blockquote:after {
+          right: -65px; } }
+  .wp-block-pullquote p {
+    font-size: 1.714em;
+    line-height: 1.792;
+    font-style: italic;
+    letter-spacing: 0.9px; }
+
 /* Elements
 --------------------------------------------- */
 html {
@@ -472,7 +514,7 @@ body {
       padding-bottom: 140px; } }
   @media (min-width: 900px) {
     .site-main {
-      padding: 0 80px 110px; } }
+      padding: 0 0 110px; } }
   .blog .site-main,
   .archive .site-main {
     max-width: 75em; }
@@ -817,7 +859,12 @@ button.site-nav__btn {
 .page-content,
 .entry-content,
 .entry-summary {
-  margin: 1.5em 0 0; }
+  margin: 60px 40px 0; }
+  @media (min-width: 900px) {
+    .page-content,
+    .entry-content,
+    .entry-summary {
+      margin: 80px 80px 0; } }
   .page-content h2,
   .entry-content h2,
   .entry-summary h2 {
@@ -848,6 +895,9 @@ button.site-nav__btn {
   .entry-content .callout,
   .entry-summary .callout {
     color: #f7bf3b; }
+
+.blog .page-title {
+  padding-top: .3896em; }
 
 .blog .page-header .subtitle,
 .page-content .subtitle,
@@ -994,9 +1044,12 @@ h1.entry-title {
 
 .single .post-main {
   background: #15232a;
-  padding: 2.142em 5em; }
+  padding: 2.142em 0; }
+  .single .post-main .entry-header {
+    margin: 0 40px; }
   .single .post-main .entry-meta {
-    color: rgba(255, 255, 255, 0.7); }
+    color: rgba(255, 255, 255, 0.7);
+    position: relative; }
     .single .post-main .entry-meta a {
       color: rgba(255, 255, 255, 0.7);
       text-decoration: none; }
@@ -1007,6 +1060,11 @@ h1.entry-title {
       padding-right: 1em; }
       .single .post-main .entry-meta .byline .author {
         font-weight: bold; }
+  .single .post-main .who-when {
+    display: inline-block; }
+  .single .post-main .cats-tags {
+    display: inline-block;
+    float: right; }
 
 /* PAGES */
 .page-title {
