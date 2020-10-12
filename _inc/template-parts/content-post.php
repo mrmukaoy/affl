@@ -29,6 +29,7 @@
 					?>
 				</div>
 				<div class="cats-tags">
+					<?php affl_entry_cats_tags(); ?>
 				</div>
 			</div><!-- .entry-meta -->
 		</header><!-- .entry-header -->
@@ -59,8 +60,10 @@
 			?>
 		</div><!-- .entry-content -->
 
+		<?php /*
 		<footer class="entry-footer">
 			<?php affl_entry_footer(); ?>
 		</footer><!-- .entry-footer -->
+		*/ ?>
 	</div><!-- .post-main -->
 </article><!-- #post-<?php the_ID(); ?> -->

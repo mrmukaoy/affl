@@ -11,5 +11,55 @@ img {
 }
 
 figure {
-	margin: 1em 0; // Extra wide images within figure tags don't overflow the content area.
+	// margin: 1em 0; // Extra wide images within figure tags don't overflow the content area.
+}
+
+.wp-block-image {
+	position: relative;
+	margin: 15% 0;
+
+	figure {
+		margin: 9.756% 0;
+		border: 4px solid $yellow;
+
+		&.aligncenter img {
+			max-width: 90%;
+			margin: -7.5% auto;
+			display: block;
+		}
+
+		&.alignleft,
+		&.alignright {
+			float: none;
+			margin-right: 0;
+			margin-left: 0;
+
+			img {
+				max-width: 75%;
+				display: inline-block;
+			}
+		}
+
+		img {
+			-webkit-box-shadow: 10px 10px 15px 0px rgba(0,0,0,1);
+			-moz-box-shadow: 10px 10px 15px 0px rgba(0,0,0,1);
+			box-shadow: 10px 10px 15px 0px rgba(0,0,0,1);
+		}
+
+		&.alignleft {
+			text-align: left;
+
+			img {
+				margin: -7.5% 0 -7.5% -4px;
+			}
+		}
+
+		&.alignright {
+			text-align: right;
+
+			img {
+				margin: -7.5% -4px -7.5% 0;
+			}
+		}
+	}
 }
