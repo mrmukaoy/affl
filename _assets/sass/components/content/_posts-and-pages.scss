@@ -40,10 +40,22 @@
 .entry-summary {
 	margin: 1.5em 0 0;
 
-	h3 {
+	h2 {
 		font-size: 1.714em;
-		letter-spacing: 1.5px;
-		line-height: normal;
+		margin: 0.25em 0 1.5em;
+	}
+	h3 {
+		font-size: 1.5em;
+		margin: 0.25em 0 1.5em;
+	}
+	h4, h5, h6 {
+		font-size: 1em;
+	}
+	h4 {
+		text-transform: uppercase;
+	}
+	h6 {
+		font-style: italic;
 	}
 
 	.callout {
@@ -226,17 +238,6 @@
 
 h1.entry-title {
 	font-size: 5em;
-}
-
-h2 {
-	font-size: 2.571em;
-	line-height: normal;
-	margin-bottom: .6667em;
-
-	.entry-title {
-		font-size: 1.5em;
-		margin: 0.25em 0 1.5em;
-	}
 }
 
 .single .post-main {

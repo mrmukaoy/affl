@@ -372,7 +372,9 @@ h4,
 h5,
 h6 {
   clear: both;
-  margin-top: 0; }
+  margin-top: 0;
+  font-weight: bold;
+  line-height: normal; }
 
 p {
   margin: 0 0 1.5em; }
@@ -530,7 +532,7 @@ img {
         max-width: 75%;
         display: inline-block; }
     .wp-block-image figure img {
-      box-shadow: 10px 10px 15px 0px rgba(51, 51, 51, 0.49); }
+      box-shadow: 10px 10px 15px 0px black; }
     .wp-block-image figure.alignleft {
       text-align: left; }
       .wp-block-image figure.alignleft img {
@@ -538,7 +540,8 @@ img {
     .wp-block-image figure.alignright {
       text-align: right; }
       .wp-block-image figure.alignright img {
-        margin: -7.5% -4px -7.5% 0; }
+        margin: -7.5% -4px -7.5% 0;
+        box-shadow: -10px 10px 15px 0px black; }
 
 table {
   margin: 0 0 1.5em;
@@ -815,12 +818,32 @@ button.site-nav__btn {
 .entry-content,
 .entry-summary {
   margin: 1.5em 0 0; }
+  .page-content h2,
+  .entry-content h2,
+  .entry-summary h2 {
+    font-size: 1.714em;
+    margin: 0.25em 0 1.5em; }
   .page-content h3,
   .entry-content h3,
   .entry-summary h3 {
-    font-size: 1.714em;
-    letter-spacing: 1.5px;
-    line-height: normal; }
+    font-size: 1.5em;
+    margin: 0.25em 0 1.5em; }
+  .page-content h4, .page-content h5, .page-content h6,
+  .entry-content h4,
+  .entry-content h5,
+  .entry-content h6,
+  .entry-summary h4,
+  .entry-summary h5,
+  .entry-summary h6 {
+    font-size: 1em; }
+  .page-content h4,
+  .entry-content h4,
+  .entry-summary h4 {
+    text-transform: uppercase; }
+  .page-content h6,
+  .entry-content h6,
+  .entry-summary h6 {
+    font-style: italic; }
   .page-content .callout,
   .entry-content .callout,
   .entry-summary .callout {
@@ -968,14 +991,6 @@ button.site-nav__btn {
 
 h1.entry-title {
   font-size: 5em; }
-
-h2 {
-  font-size: 2.571em;
-  line-height: normal;
-  margin-bottom: .6667em; }
-  h2 .entry-title {
-    font-size: 1.5em;
-    margin: 0.25em 0 1.5em; }
 
 .single .post-main {
   background: #15232a;
@@ -1296,6 +1311,10 @@ h2 {
   margin: 0 0 1.5em; }
   .widget select {
     max-width: 100%; }
+  .widget .widget-title {
+    font-size: 2.571em;
+    line-height: normal;
+    margin-bottom: .6667em; }
   .widget .subtitle {
     color: #f7bf3b;
     font-size: 1em;
