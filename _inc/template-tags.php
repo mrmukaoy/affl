@@ -282,6 +282,7 @@ if ( ! function_exists( 'affl_archive_cats_tags' ) ) {
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
 			// categories
+			/*
 			$cats_list = '';
 			$cats = get_the_category();
 			if ( $cats ) {
@@ -290,31 +291,36 @@ if ( ! function_exists( 'affl_archive_cats_tags' ) ) {
 				}
 				$cats_list = rtrim( $cats_list, ', ' );
 			}
+			*/
 
 			// tags
 			$tags_list = '';
 			$tags = get_the_tags();
 			if( $tags ) {
 				foreach ( $tags as $tag ) {
-					$tags_list .= '#' . $tag->name . ', ';
+					$tags_list .= $tag->name . ', ';
 				}
 				$tags_list = rtrim( $tags_list, ', ' );
 			}
 
 			// build the list(s)
-			if ( $cats_list || $tags_list ) { echo '<div class="cats-tags">'; }
+			// if ( $cats_list || $tags_list ) { echo '<div class="cats-tags">'; }
+			if ( $tags_list ) { echo '<div class="cats-tags">'; }
 
+			/*
 			if ( $cats_list ) {
-				/* translators: 1: list of categories. */
+				// translators: 1: list of categories.
 				printf( '<span class="cat-links">' . esc_html__( '%1$s', 'affl' ) . '</span>', $cats_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
+			*/
 
 			if ( $tags_list ) {
 				/* translators: 1: list of tags. */
 				printf( '<span class="tags-links">' . esc_html__( '%1$s', 'affl' ) . '</span>', $tags_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 
-			if ( $cats_list || $tags_list ) { echo "</div>\n"; }
+			// if ( $cats_list || $tags_list ) { echo "</div>\n"; }
+			if ( $tags_list ) { echo "</div>\n"; }
 		}
 	}
 } //endif

@@ -33,7 +33,7 @@ get_header();
 		if ( have_posts() ) {
 			if ( ! is_front_page() ) {
 				?>
-				<header>
+				<header class="page-header">
 					<p class="subtitle">Blog</p>
 					<h1 class="page-title"><?php single_post_title(); ?></h1>
 				</header>

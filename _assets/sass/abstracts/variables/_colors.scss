@@ -2,6 +2,7 @@ $yellow: #f7bf3b;
 
 $background: #15232a;
 $background-highlight: #384f5b;
+$background-highlight-hover: lighten( $background-highlight, 10 ); //#4b6a7b
 $background-screen: #f1f1f1;
 $background-hr: #ccc;
 $background-button: #e6e6e6;

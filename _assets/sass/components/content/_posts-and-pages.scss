@@ -44,16 +44,27 @@
 		font-size: 1.714em;
 		letter-spacing: 1.5px;
 		line-height: normal;
-		color: $yellow;
 	}
 
-	.subtitle {
-		font-size: 1em;
+	.callout {
+		color: $yellow;
+	}
+}
+
+.subtitle {
+	.blog .page-header &,
+	.page-content &,
+	.entry-content &,
+	.entry-summary & {
+		font-size: 1.143em;
 		letter-spacing: 1.81px;
+		text-transform: uppercase;
+		margin: 0;
 		position: absolute;
 		top: 0;
 		left: 0;
 	}
+
 }
 
 .page-links {
@@ -63,6 +74,13 @@
 
 /* POSTS */
 // POST-ARCHIVE
+.blog {
+	.page-header {
+		position: relative;
+		z-index: 1;
+	}
+}
+
 .articles-wrapper {
 
 	@media screen and (min-width: 600px) {
@@ -81,12 +99,20 @@
 		margin-bottom: 2.5em;
 		@include clearfix();
 
+		&:hover {
+			background-color: $background-highlight-hover;
+		}
+
 		@media screen and (min-width: 600px) {
 			width: 45.5%;
 		}
 
 		@media screen and (min-width: 900px) {
 			width: 30%;
+		}
+
+		@media screen and (min-width: 1200px) {
+			width: 23%;
 		}
 
 		a {
@@ -113,6 +139,10 @@
 				width: 65%;
 			}
 
+			@media screen and (min-width: 1200px) {
+				width: 48.6667%;
+			}
+
 			.content {
 				width: auto;
 
@@ -122,6 +152,10 @@
 					float: left;
 				}
 			}
+		}
+
+		.entry-title {
+			margin-bottom: 46px;
 		}
 
 		.thumbnail {
@@ -161,7 +195,7 @@
 		}
 	}
 
-	.vcard {
+	.author {
 		font-weight: bold;
 	}
 
@@ -169,10 +203,15 @@
 		padding-bottom: 1.2em;
 	}
 
+	.cats-tags {
+		padding-bottom: .25em;
+	}
+
 	.clickthrough {
 		position: absolute;
-		bottom: 1em;
+		bottom: 2.0833em;
 		margin-bottom: 0;
+		font-size: .85714em;
 		text-transform: uppercase;
 		letter-spacing: 4.5px;
 	}

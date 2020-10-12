@@ -21,7 +21,7 @@
 			</div><!-- .entry-meta -->
 		</header><!-- .entry-header -->
 
-		<?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>
+		<?php the_title( '<h3 class="entry-title">', '</h3>' ); ?>
 
 		<p class="clickthrough">Read more &rarr;</p>
 	</div>

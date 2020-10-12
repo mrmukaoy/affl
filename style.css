@@ -795,22 +795,33 @@ button.site-nav__btn {
   .entry-summary h3 {
     font-size: 1.714em;
     letter-spacing: 1.5px;
-    line-height: normal;
+    line-height: normal; }
+  .page-content .callout,
+  .entry-content .callout,
+  .entry-summary .callout {
     color: #f7bf3b; }
-  .page-content .subtitle,
-  .entry-content .subtitle,
-  .entry-summary .subtitle {
-    font-size: 1em;
-    letter-spacing: 1.81px;
-    position: absolute;
-    top: 0;
-    left: 0; }
+
+.blog .page-header .subtitle,
+.page-content .subtitle,
+.entry-content .subtitle,
+.entry-summary .subtitle {
+  font-size: 1.143em;
+  letter-spacing: 1.81px;
+  text-transform: uppercase;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  left: 0; }
 
 .page-links {
   clear: both;
   margin: 0 0 1.5em; }
 
 /* POSTS */
+.blog .page-header {
+  position: relative;
+  z-index: 1; }
+
 @media screen and (min-width: 600px) {
   .articles-wrapper {
     display: -ms-flexbox;
@@ -834,12 +845,17 @@ button.site-nav__btn {
     content: "";
     display: table;
     clear: both; }
+  .articles-wrapper .post:hover {
+    background-color: #4b6a7b; }
   @media screen and (min-width: 600px) {
     .articles-wrapper .post {
       width: 45.5%; } }
   @media screen and (min-width: 900px) {
     .articles-wrapper .post {
       width: 30%; } }
+  @media screen and (min-width: 1200px) {
+    .articles-wrapper .post {
+      width: 23%; } }
   .articles-wrapper .post a {
     text-decoration: none; }
   .articles-wrapper .post .content {
@@ -854,6 +870,9 @@ button.site-nav__btn {
   @media screen and (min-width: 900px) {
     .articles-wrapper .post.has-post-thumbnail {
       width: 65%; } }
+  @media screen and (min-width: 1200px) {
+    .articles-wrapper .post.has-post-thumbnail {
+      width: 48.6667%; } }
   .articles-wrapper .post.has-post-thumbnail .content {
     width: auto; }
     @media screen and (min-width: 600px) {
@@ -861,6 +880,8 @@ button.site-nav__btn {
         width: 50%;
         height: 100%;
         float: left; } }
+  .articles-wrapper .post .entry-title {
+    margin-bottom: 46px; }
   .articles-wrapper .post .thumbnail {
     display: block;
     width: 100%;
@@ -898,16 +919,20 @@ button.site-nav__btn {
       color: #fff;
       text-decoration: underline; }
 
-.articles-wrapper .vcard {
+.articles-wrapper .author {
   font-weight: bold; }
 
 .articles-wrapper .posted-on {
   padding-bottom: 1.2em; }
 
+.articles-wrapper .cats-tags {
+  padding-bottom: .25em; }
+
 .articles-wrapper .clickthrough {
   position: absolute;
-  bottom: 1em;
+  bottom: 2.0833em;
   margin-bottom: 0;
+  font-size: .85714em;
   text-transform: uppercase;
   letter-spacing: 4.5px; }
 
