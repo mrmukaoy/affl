@@ -958,9 +958,32 @@ button.site-nav__btn {
   .page-content .summary,
   .entry-content .summary,
   .entry-summary .summary {
-    font-size: 1.25rem;
+    position: relative;
+    font-size: 1.125rem;
     text-align: center;
-    font-style: italic; }
+    font-style: italic;
+    line-height: 1.5; }
+    .page-content .summary:before, .page-content .summary:after,
+    .entry-content .summary:before,
+    .entry-content .summary:after,
+    .entry-summary .summary:before,
+    .entry-summary .summary:after {
+      font-size: 108px;
+      color: #f7bf3b;
+      position: absolute;
+      top: -2.5rem; }
+    .page-content .summary:before,
+    .entry-content .summary:before,
+    .entry-summary .summary:before {
+      content: '{';
+      left: -4.5rem;
+      margin-left: 1rem; }
+    .page-content .summary:after,
+    .entry-content .summary:after,
+    .entry-summary .summary:after {
+      content: '}';
+      right: -4.5rem;
+      margin-right: 1rem; }
   .page-content .callout,
   .entry-content .callout,
   .entry-summary .callout {

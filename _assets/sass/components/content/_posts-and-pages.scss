@@ -63,9 +63,29 @@
 	}
 
 	.summary {
-		font-size: 1.25rem;
+		position: relative;
+		font-size: 1.125rem;
 		text-align: center;
 		font-style: italic;
+		line-height: 1.5;
+
+		&:before,
+		&:after {
+			font-size: 108px;
+			color: $yellow;
+			position: absolute;
+			top: -2.5rem;
+		}
+
+		&:before {
+			content: '{';
+			left: -3.5rem;
+		}
+
+		&:after {
+			content: '}';
+			right: -3.5rem;
+		}
 	}
 
 	.callout {
