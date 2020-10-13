@@ -4,7 +4,7 @@ Theme URI: http://underscores.me/
 Author: Afflecto Media Marketing
 Author URI: https://afflectomm.com/
 Description: Description
-Version: 0.5.0
+Version: 0.9.0
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -471,7 +471,7 @@ html {
 
 body {
   background: #15232a;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.929; }
 
 .site {
@@ -515,9 +515,68 @@ body {
   @media (min-width: 900px) {
     .site-main {
       padding: 0 0 110px; } }
+  .home .site-main {
+    max-width: 68.75rem; }
   .blog .site-main,
   .archive .site-main {
-    max-width: 75em; }
+    max-width: 75em;
+    padding: 2.5em; }
+
+/** FRONT PAGE - SERVICES LIST **/
+.home-services-list {
+  position: relative;
+  width: 100%;
+  max-width: 280px;
+  margin: 0 auto; }
+  @media (min-width: 600px) {
+    .home-services-list {
+      max-width: 100%; } }
+  .home-services-list .wp-block-columns {
+    display: block;
+    text-align: center;
+    margin-bottom: 3em; }
+    .home-services-list .wp-block-columns:after {
+      content: "";
+      display: table;
+      clear: both; }
+    @media (min-width: 600px) {
+      .home-services-list .wp-block-columns {
+        text-align: left; } }
+    @media (min-width: 1080px) {
+      .home-services-list .wp-block-columns.half {
+        position: relative;
+        width: 47%; }
+        .home-services-list .wp-block-columns.half:not(:first-child) {
+          margin-top: -5em; }
+        .home-services-list .wp-block-columns.half.right {
+          left: 52%; } }
+  .home-services-list .wp-block-column {
+    display: block; }
+    @media (min-width: 600px) {
+      .home-services-list .wp-block-column {
+        display: inline-block; }
+        .home-services-list .wp-block-column:first-child {
+          max-width: 193px;
+          float: left; } }
+    .home-services-list .wp-block-column .wp-block-image,
+    .home-services-list .wp-block-column .wp-block-image.is-resized {
+      display: inline-block;
+      margin: 0; }
+  .home-services-list .home-service-list-desc, .home-services-list.is-vertically-aligned-top, .home-services-list.is-vertically-aligned-center, .home-services-list.is-vertically-aligned-bottom {
+    padding-top: .5rem;
+    width: 100%; }
+    @media (min-width: 600px) {
+      .home-services-list .home-service-list-desc, .home-services-list.is-vertically-aligned-top, .home-services-list.is-vertically-aligned-center, .home-services-list.is-vertically-aligned-bottom {
+        padding-top: 70px;
+        width: calc(100% - 225px); } }
+    .home-services-list .home-service-list-desc p, .home-services-list.is-vertically-aligned-top p, .home-services-list.is-vertically-aligned-center p, .home-services-list.is-vertically-aligned-bottom p {
+      margin-bottom: .75rem; }
+    .home-services-list .home-service-list-desc h3,
+    .home-services-list .home-service-list-desc p:last-child, .home-services-list.is-vertically-aligned-top h3,
+    .home-services-list.is-vertically-aligned-top p:last-child, .home-services-list.is-vertically-aligned-center h3,
+    .home-services-list.is-vertically-aligned-center p:last-child, .home-services-list.is-vertically-aligned-bottom h3,
+    .home-services-list.is-vertically-aligned-bottom p:last-child {
+      margin-bottom: 0; }
 
 hr {
   background-color: #ccc;

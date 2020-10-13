@@ -48,7 +48,7 @@ if ( is_front_page() ) {
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
-<div class="site"><!-- necessary for sticky footer -->
+<div class="site slant"><!-- necessary for sticky footer -->
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'affl' ); ?></a>
 
 	<header id="masthead" class="site-header">

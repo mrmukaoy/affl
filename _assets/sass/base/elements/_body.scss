@@ -8,7 +8,7 @@ html {
 
 body {
 	background: $background; // Fallback for when there is no custom background color defined.
-	font-size: 14px;
+	font-size: 16px;
 	line-height: 1.929;
 }
 
@@ -66,8 +66,92 @@ body {
 		padding: 0 0 110px;
 	}
 
+	.home & {
+		max-width: 68.75rem;
+	}
+
 	.blog &,
 	.archive & {
 		max-width: 75em;
+		padding: 2.5em;
+	}
+}
+
+/** FRONT PAGE - SERVICES LIST **/
+.home-services-list {
+	position: relative;
+	width: 100%;
+	max-width: 280px;
+	margin: 0 auto;
+
+	@media (min-width:600px) {
+		max-width: 100%;
+	}
+
+	.wp-block-columns {
+		display: block;
+		text-align: center;
+		margin-bottom: 3em;
+		@include clearfix();
+
+		@media (min-width:600px) {
+			text-align: left;
+		}
+
+		@media (min-width:1080px) {
+			&.half {
+				position: relative;
+				width: 47%;
+
+				&:not(:first-child) {
+					margin-top: -5em;
+				}
+
+				&.right {
+					left: 52%;
+				}
+			}
+		}
+	}
+
+	.wp-block-column {
+		display: block;
+
+		@media (min-width:600px) {
+			display: inline-block;
+
+			&:first-child {
+				max-width: 193px;
+				float: left;
+			}
+		}
+
+		.wp-block-image,
+		.wp-block-image.is-resized {
+			display: inline-block;
+			margin: 0;
+		}
+	}
+
+	.home-service-list-desc,
+	&.is-vertically-aligned-top,
+	&.is-vertically-aligned-center,
+	&.is-vertically-aligned-bottom {
+		padding-top: .5rem;
+		width: 100%;
+
+		@media (min-width:600px) {
+			padding-top: 70px;
+			width: calc(100% - 225px);
+		}
+
+		p {
+			margin-bottom: .75rem;
+		}
+
+		h3,
+		p:last-child {
+			margin-bottom: 0;
+		}
 	}
 }
