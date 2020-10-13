@@ -576,3 +576,8 @@ text-align:right;
 	padding-right:10vw;
 	}
 }
+
+/** FORMIDABLE OVERRIDE **/
+.with_frm_style {
+	--fieldset-bg-color: transparent !important;
+}

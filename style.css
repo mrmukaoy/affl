@@ -521,6 +521,10 @@ body {
   .archive .site-main {
     max-width: 75em;
     padding: 2.5em; }
+    @media (min-width: 900px) {
+      .blog .site-main,
+      .archive .site-main {
+        padding-top: 13.5rem; } }
 
 .thirty-five-em {
   width: 100%;
@@ -1377,6 +1381,10 @@ h1.entry-title {
     -ms-transform: none;
         transform: none;
     padding-right: 10vw; } }
+
+/** FORMIDABLE OVERRIDE **/
+.with_frm_style {
+  --fieldset-bg-color: transparent !important; }
 
 /* Comments
 --------------------------------------------- */

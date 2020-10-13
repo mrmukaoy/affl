@@ -74,6 +74,10 @@ body {
 	.archive & {
 		max-width: 75em;
 		padding: 2.5em;
+
+		@media (min-width:900px) {
+			padding-top: 13.5rem;
+		}
 	}
 }
 

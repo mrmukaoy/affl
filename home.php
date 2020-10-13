@@ -17,15 +17,35 @@ get_header();
 
 	<main id="primary" class="site-main">
 
-		<?php // try to find the photo for post_thumbnail on the blog home page, since once you assign a page to be blog home, you can no longer assign an image.
+		<?php // get thumbnail for most recent post
+		$thumb_url = '';
+		$args = array(
+			'post_type'      => 'post',
+			'post_status'    => 'publish',
+			'posts_per_page' => 4,
+			'orderby'        => 'date',
+			'order'          => DESC,
+		);
+		$the_query = new WP_Query( $args );
 
-		// HOW TO: First, assign a featured image to the page
-		// THEN: assign that page as BLog home.
-		$blog_id = get_option( 'page_for_posts' );
-		$image_url = get_the_post_thumbnail_url($blog_id);
+		// The Loop
+		if ( $the_query->have_posts() ) {
+			do {
+				$the_query->the_post();
+				if ( has_post_thumbnail() ) {
+					$thumb_url = get_the_post_thumbnail_url( $post->ID, 'full' );
+				}
+			} while ( '' == $thumb_url );
+
+		} else {
+			// no posts found
+		}
+
+		// Restore original Post Data
+		wp_reset_postdata();
 		?>
 
-		<div class="large-post-thumbnail-wrapper" style="background-image: url(<?php echo $image_url; ?>);">
+		<div class="large-post-thumbnail-wrapper" style="background-image: url(<?php echo $thumb_url; ?>);">
 			<div class="mask"></div>
 		</div><!-- .large-post-thumbnail -->
 
