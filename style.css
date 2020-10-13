@@ -976,14 +976,12 @@ button.site-nav__btn {
     .entry-content .summary:before,
     .entry-summary .summary:before {
       content: '{';
-      left: -4.5rem;
-      margin-left: 1rem; }
+      left: -3.5rem; }
     .page-content .summary:after,
     .entry-content .summary:after,
     .entry-summary .summary:after {
       content: '}';
-      right: -4.5rem;
-      margin-right: 1rem; }
+      right: -3.5rem; }
   .page-content .callout,
   .entry-content .callout,
   .entry-summary .callout {
@@ -1589,6 +1587,55 @@ h1.entry-title {
 /*--------------------------------------------------------------
 # Plugins
 --------------------------------------------------------------*/
+/* Testimonial Rotator plugin
+--------------------------------------------- */
+.testimonial_rotator_wrap {
+  max-width: 42rem;
+  margin: 7.5rem auto; }
+  .testimonial_rotator_wrap .slide {
+    padding: 3rem 4.5rem; }
+
+.testimonial_rotator_quote {
+  font-family: "Alegreya", Times, "Times New Roman", serif;
+  font-style: italic;
+  font-size: 1.6875rem;
+  line-height: 1.25;
+  margin-bottom: 1.25rem;
+  position: relative; }
+  .testimonial_rotator_quote:before, .testimonial_rotator_quote:after {
+    content: '';
+    background-size: 35px 27px;
+    display: inline-block;
+    width: 35px;
+    height: 27px;
+    position: absolute; }
+    @media (min-width: 900px) {
+      .testimonial_rotator_quote:before, .testimonial_rotator_quote:after {
+        background-size: 58px 44px;
+        width: 58px;
+        height: 44px; } }
+  .testimonial_rotator_quote:before {
+    background-image: url(_assets/images/ldquo.png);
+    top: 7px;
+    left: -49px; }
+    @media (min-width: 900px) {
+      .testimonial_rotator_quote:before {
+        left: -72px; } }
+  .testimonial_rotator_quote:after {
+    background-image: url(_assets/images/rdquo.png);
+    bottom: 7px;
+    right: -42px; }
+    @media (min-width: 900px) {
+      .testimonial_rotator_quote:after {
+        right: -65px; } }
+
+.testimonial_rotator_author_info p {
+  font-family: "Fira Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+  color: #f7bf3b; }
+  .testimonial_rotator_author_info p:before {
+    content: '\2014'; }
+
 /* Jetpack infinite scroll
 --------------------------------------------- */
 /* Hide the Posts Navigation and the Footer when Infinite Scroll is in use. */

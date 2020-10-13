@@ -158,7 +158,7 @@ function affl_scripts() {
 	wp_style_add_data( 'affl-style', 'rtl', 'replace' );
 
 	// Google font
-	wp_register_style( 'googleFonts', 'https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap' );
+	wp_register_style( 'googleFonts', 'https://fonts.googleapis.com/css2?amily=Alegreya:ital@1&family=Fira+Sans:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap' );
 	wp_enqueue_style( 'googleFonts' );
 
 
