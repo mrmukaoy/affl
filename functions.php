@@ -245,6 +245,11 @@ require get_template_directory() . '/_inc/custom-header.php';
 require get_template_directory() . '/_inc/template-tags.php';
 
 /**
+ * Custom taxonomy
+ */
+require get_template_directory() . '/_inc/taxon-featured-image-hooks.php';
+
+/**
  * Custom widgets
  */
 require get_template_directory() . '/_inc/class-wp-widget-afflecto-recent-posts.php';

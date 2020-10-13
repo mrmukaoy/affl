@@ -9,7 +9,15 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>><a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark">
+
+<?php // build our own classes for post
+$class = 'post';
+if ( has_term( 'show-on-archive', 'show_thumbs' ) ) {
+	$class.= ' has-post-thumbnail';
+}
+?>
+
+<article id="post-<?php the_ID(); ?>" class="<?php echo $class; ?>"><a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark">
 	<div class="content">
 		<header class="entry-header">
 			<div class="entry-meta">
@@ -26,7 +34,7 @@
 		<p class="clickthrough">Read more &rarr;</p>
 	</div>
 
-	<?php if ( has_post_thumbnail() ) {
+	<?php if ( has_post_thumbnail() && has_term( 'show-on-archive', 'show_thumbs' ) ) {
 		$img_url = get_the_post_thumbnail_url( get_the_ID() ); ?>
 	<div class="thumbnail" style="background: url('<?php echo esc_url( $img_url ); ?>') center;"></div>
 	<?php } ?>

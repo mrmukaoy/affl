@@ -24,7 +24,7 @@ get_header();
 			'post_status'    => 'publish',
 			'posts_per_page' => 4,
 			'orderby'        => 'date',
-			'order'          => DESC,
+			'order'          => 'DESC',
 		);
 		$the_query = new WP_Query( $args );
 
