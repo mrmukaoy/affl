@@ -522,6 +522,11 @@ body {
     max-width: 75em;
     padding: 2.5em; }
 
+.thirty-five-em {
+  width: 100%;
+  max-width: 35rem;
+  margin: 0 auto !important; }
+
 /** FRONT PAGE - SERVICES LIST **/
 .home-services-list {
   position: relative;
@@ -579,10 +584,10 @@ body {
       margin-bottom: 0; }
 
 hr {
-  background-color: #ccc;
+  background-color: #f7bf3b;
   border: 0;
   height: 1px;
-  margin-bottom: 1.5em; }
+  margin-bottom: 1.5rem; }
 
 ul,
 ol {
@@ -950,10 +955,57 @@ button.site-nav__btn {
   .entry-content h6,
   .entry-summary h6 {
     font-style: italic; }
+  .page-content .summary,
+  .entry-content .summary,
+  .entry-summary .summary {
+    font-size: 1.25rem;
+    text-align: center;
+    font-style: italic; }
   .page-content .callout,
   .entry-content .callout,
   .entry-summary .callout {
     color: #f7bf3b; }
+  .page-content .notice-me,
+  .entry-content .notice-me,
+  .entry-summary .notice-me {
+    background-color: #f7bf3b;
+    color: #15232a;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: .75rem 1.875rem; }
+  .page-content .hush,
+  .entry-content .hush,
+  .entry-summary .hush {
+    color: #3e5460;
+    font-style: italic; }
+  .page-content .invite,
+  .entry-content .invite,
+  .entry-summary .invite {
+    color: #f7bf3b;
+    font-size: 1.75rem;
+    font-style: italic;
+    letter-spacing: 1.5px; }
+  .page-content .person,
+  .entry-content .person,
+  .entry-summary .person {
+    font-size: 1.5rem;
+    line-height: 1; }
+    .page-content .person .name,
+    .entry-content .person .name,
+    .entry-summary .person .name {
+      text-transform: uppercase;
+      font-weight: bold; }
+    .page-content .person .job-title,
+    .entry-content .person .job-title,
+    .entry-summary .person .job-title {
+      font-weight: normal;
+      font-style: italic; }
+    .page-content .person .contact,
+    .entry-content .person .contact,
+    .entry-summary .person .contact {
+      display: inline-block;
+      padding-top: 1.5rem; }
 
 .blog .page-title {
   padding-top: .3896em; }

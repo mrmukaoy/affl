@@ -62,8 +62,55 @@
 		font-style: italic;
 	}
 
+	.summary {
+		font-size: 1.25rem;
+		text-align: center;
+		font-style: italic;
+	}
+
 	.callout {
 		color: $yellow;
+	}
+
+	.notice-me {
+		background-color: $yellow;
+		color: $background;
+		text-align: center;
+		text-transform: uppercase;
+		font-weight: bold;
+		padding: .75rem 1.875rem;
+	}
+
+	.hush {
+		color: #3e5460;
+		font-style: italic;
+	}
+
+	.invite {
+		color: $yellow;
+		font-size: 1.75rem;
+		font-style: italic;
+		letter-spacing: 1.5px;
+	}
+
+	.person {
+		font-size: 1.5rem;
+		line-height: 1;
+
+		.name {
+			text-transform: uppercase;
+			font-weight: bold;
+		}
+
+		.job-title {
+			font-weight: normal;
+			font-style: italic;
+		}
+
+		.contact {
+			display: inline-block;
+			padding-top: 1.5rem;
+		}
 	}
 }
 
