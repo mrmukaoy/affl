@@ -44,6 +44,10 @@
 		margin: 80px 80px 0;
 	}
 
+	.home & {
+		margin: 80px 0 0;
+	}
+
 	h2 {
 		font-size: 1.714em;
 		margin: 0.25em 0 1.5em;
@@ -68,6 +72,9 @@
 		text-align: center;
 		font-style: italic;
 		line-height: 1.5;
+		max-width: 43rem;
+		margin: 0 auto;
+		padding: 0 4rem;
 
 		&:before,
 		&:after {
@@ -79,12 +86,12 @@
 
 		&:before {
 			content: '{';
-			left: -3.5rem;
+			left: .5rem;
 		}
 
 		&:after {
 			content: '}';
-			right: -3.5rem;
+			right: .5rem;
 		}
 	}
 
@@ -378,6 +385,20 @@ h1.entry-title {
 	}
 }
 
+.home-services-list-wrapper {
+	background-image: url('_assets/images/home-services-bkg.png');
+	background-size: cover;
+	padding: 5em 0;
+
+	.home-services-list {
+		max-width: 69rem;
+	}
+}
+
+#lets-work-together {
+	background-color: #384f5b;
+}
+
 /** LARGE THUMBNAIL IMAGE **/
 .large-post-thumbnail-wrapper {
 	position: absolute;
@@ -393,7 +414,7 @@ h1.entry-title {
 
 	.home & {
 		height: 44rem;
-		clip-path: polygon(0 0, 100% 0, 100% 545px, 0% 100%);
+		clip-path: none;
 	}
 
 	.mask {
@@ -409,7 +430,6 @@ h1.entry-title {
 }
 
 /** SLANT **/
-/*
 .slant {
 	background-color: #152329;
 	-webkit-transform: skew(-5deg) rotate(-5deg);
@@ -582,7 +602,6 @@ text-align:right;
 	padding-right:10vw;
 	}
 }
-*/
 
 /** FORMIDABLE OVERRIDE **/
 .with_frm_style {

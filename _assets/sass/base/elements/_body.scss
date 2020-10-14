@@ -54,7 +54,7 @@ body {
 .site-main {
 	padding-bottom: 3em;
 	max-width: 63em;
-	padding: 0 16px 160px;
+	padding: 0 0 160px;
 	margin: 0 auto;
 
 	/* these align with height of .site-footer__spacer */
@@ -67,7 +67,7 @@ body {
 	}
 
 	.home & {
-		max-width: 68.75rem;
+		max-width: 100%;
 	}
 
 	.blog &,
