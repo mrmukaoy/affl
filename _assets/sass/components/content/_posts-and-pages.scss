@@ -388,7 +388,10 @@ h1.entry-title {
 .home-services-list-wrapper {
 	background-image: url('_assets/images/home-services-bkg.png');
 	background-size: cover;
-	padding: 5em 0;
+
+	&.slant__content--gutter {
+		padding: 4rem 24px;
+	}
 
 	.home-services-list {
 		max-width: 69rem;
@@ -397,6 +400,8 @@ h1.entry-title {
 
 #lets-work-together {
 	background-color: #384f5b;
+	padding: 7em 0 140px;
+	margin-bottom: -140px;
 }
 
 /** LARGE THUMBNAIL IMAGE **/
@@ -480,8 +485,8 @@ h1.entry-title {
 }
 @supports ((-webkit-clip-path:polygon(0 0,0 0,0 0,0 0)) or (clip-path:polygon(0 0,0 0,0 0,0 0))) {
 	.slant {
-		// margin-top: -50px;
-		// margin-bottom: -50px;
+		margin-top: -50px;
+		margin-bottom: -50px;
 		filter: url('data:image/svg+xml;
 		charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur in="SourceAlpha" stdDeviation="30" /><feOffset dx="1" dy="1" result="offsetblur" /><feFlood flood-color="rgba(0,0,0,0.6)" /><feComposite in2="offsetblur" operator="in" /><feMerge><feMergeNode /><feMergeNode in="SourceGraphic" /></feMerge></filter></svg>#filter');
 		-webkit-filter: drop-shadow(0 0 30px rgba(0,0,0,.6));

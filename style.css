@@ -4,7 +4,7 @@ Theme URI: http://underscores.me/
 Author: Afflecto Media Marketing
 Author URI: https://afflectomm.com/
 Description: Description
-Version: 0.9.5
+Version: 0.9.6
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -442,14 +442,14 @@ big {
           width: 58px;
           height: 44px; } }
     .wp-block-pullquote blockquote:before {
-      background-image: url(_assets/images/ldquo.png);
+      background-image: url("_assets/images/ldquo.png");
       top: 7px;
       left: -49px; }
       @media (min-width: 900px) {
         .wp-block-pullquote blockquote:before {
           left: -72px; } }
     .wp-block-pullquote blockquote:after {
-      background-image: url(_assets/images/rdquo.png);
+      background-image: url("_assets/images/rdquo.png");
       bottom: 7px;
       right: -42px; }
       @media (min-width: 900px) {
@@ -1229,13 +1229,16 @@ h1.entry-title {
 
 .home-services-list-wrapper {
   background-image: url("_assets/images/home-services-bkg.png");
-  background-size: cover;
-  padding: 5em 0; }
+  background-size: cover; }
+  .home-services-list-wrapper.slant__content--gutter {
+    padding: 4rem 24px; }
   .home-services-list-wrapper .home-services-list {
     max-width: 69rem; }
 
 #lets-work-together {
-  background-color: #384f5b; }
+  background-color: #384f5b;
+  padding: 7em 0 140px;
+  margin-bottom: -140px; }
 
 /** LARGE THUMBNAIL IMAGE **/
 .large-post-thumbnail-wrapper {
@@ -1301,6 +1304,8 @@ h1.entry-title {
 
 @supports ((-webkit-clip-path: polygon(0 0, 0 0, 0 0, 0 0)) or (clip-path: polygon(0 0, 0 0, 0 0, 0 0))) {
   .slant {
+    margin-top: -50px;
+    margin-bottom: -50px;
     filter: url('data:image/svg+xml;\a 		charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur in="SourceAlpha" stdDeviation="30" /><feOffset dx="1" dy="1" result="offsetblur" /><feFlood flood-color="rgba(0,0,0,0.6)" /><feComposite in2="offsetblur" operator="in" /><feMerge><feMergeNode /><feMergeNode in="SourceGraphic" /></feMerge></filter></svg>#filter');
     filter: drop-shadow(0 0 30px rgba(0, 0, 0, 0.6));
     box-shadow: none;
@@ -1465,7 +1470,8 @@ h1.entry-title {
   position: relative;
   filter: url('data:image/svg+xml;\a 	charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur in="SourceAlpha" stdDeviation="30" /><feOffset dx="1" dy="1" result="offsetblur" /><feFlood flood-color="rgba(0,0,0,0.6)" /><feComposite in2="offsetblur" operator="in" /><feMerge><feMergeNode /><feMergeNode in="SourceGraphic" /></feMerge></filter></svg>#filter');
   filter: drop-shadow(0 0 30px rgba(0, 0, 0, 0.6));
-  overflow-x: clip; }
+  overflow-x: clip;
+  z-index: 10; }
 
 .site-footer .mark {
   margin: 0 auto 32px;
@@ -1620,16 +1626,17 @@ h1.entry-title {
 --------------------------------------------- */
 .testimonial_rotator_wrap {
   max-width: 42rem;
-  margin: 7.5rem auto; }
+  margin: 4.5rem auto 1.5rem;
+  padding: 0 10px; }
   .testimonial_rotator_wrap .slide {
-    padding: 3rem 4.5rem; }
+    padding: 0 4.5rem; }
 
 .testimonial_rotator_quote {
   font-family: "Alegreya", Times, "Times New Roman", serif;
   font-style: italic;
   font-size: 1.6875rem;
   line-height: 1.25;
-  margin-bottom: 1.25rem;
+  margin-bottom: 0;
   position: relative; }
   .testimonial_rotator_quote:before, .testimonial_rotator_quote:after {
     content: '';
@@ -1658,12 +1665,16 @@ h1.entry-title {
       .testimonial_rotator_quote:after {
         right: -65px; } }
 
-.testimonial_rotator_author_info p {
-  font-family: "Fira Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  font-size: 1rem;
-  color: #f7bf3b; }
-  .testimonial_rotator_author_info p:before {
-    content: '\2014'; }
+.testimonial_rotator.template-longform .testimonial_rotator_author_info {
+  margin: 0 auto;
+  padding: 20px 5px 0; }
+  .testimonial_rotator.template-longform .testimonial_rotator_author_info p {
+    font-family: "Fira Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    font-size: 1rem;
+    color: #f7bf3b;
+    margin: 0; }
+    .testimonial_rotator.template-longform .testimonial_rotator_author_info p:before {
+      content: '\2014'; }
 
 /* Jetpack infinite scroll
 --------------------------------------------- */

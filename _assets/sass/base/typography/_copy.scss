@@ -80,7 +80,7 @@ big {
 		}
 
 		&:before {
-			background-image: url(_assets/images/ldquo.png);
+			background-image: url('_assets/images/ldquo.png');
 			top: 7px;
 			left: -49px;
 
@@ -90,7 +90,7 @@ big {
 		}
 
 		&:after {
-			background-image: url(_assets/images/rdquo.png);
+			background-image: url('_assets/images/rdquo.png');
 			bottom: 7px;
 			right: -42px;
 

@@ -1,9 +1,10 @@
 .testimonial_rotator_wrap {
 	max-width: 42rem;
-	margin: 7.5rem auto;
+	margin: 4.5rem auto 1.5rem;
+	padding: 0 10px;
 
 	.slide {
-		padding: 3rem 4.5rem;
+		padding: 0 4.5rem;
 	}
 }
 
@@ -12,7 +13,7 @@
 	font-style: italic;
 	font-size: 1.6875rem;
 	line-height: 1.25;
-	margin-bottom: 1.25rem;
+	margin-bottom: 0;
 	position: relative;
 
 	&:before,
@@ -53,12 +54,18 @@
 
 }
 
-.testimonial_rotator_author_info p {
-	font-family: $font__main;
-	font-size: 1rem;
-	color: $yellow;
+.testimonial_rotator.template-longform .testimonial_rotator_author_info {
+	margin: 0 auto;
+	padding: 20px 5px 0;
 
-	&:before {
-		content: '\2014';
+	p {
+		font-family: $font__main;
+		font-size: 1rem;
+		color: $yellow;
+		margin: 0;
+
+		&:before {
+			content: '\2014';
+		}
 	}
 }
