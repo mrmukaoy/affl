@@ -27,7 +27,7 @@
 	wp_title( '' ); echo ' Archive | ';
 } elseif ( is_search() ) {
 	echo 'Search for &quot;' . wp_specialchars( $s ) . '&quot; | ';
-} elseif ( ! ( is_404() ) && ( is_single() ) || ( is_page() && ! is_front_page() ) ) {
+} elseif ( ! ( is_404() ) && ( is_single() ) || is_home() || ( is_page() && ! is_front_page() ) ) {
 	wp_title( '' );
 	echo ' | ';
 } elseif ( is_404() ) {

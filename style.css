@@ -4,7 +4,7 @@ Theme URI: http://underscores.me/
 Author: Afflecto Media Marketing
 Author URI: https://afflectomm.com/
 Description: Description
-Version: 0.9.6
+Version: 0.9.7
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -1063,8 +1063,141 @@ button.site-nav__btn {
   position: relative;
   z-index: 1; }
 
+.blog .articles-wrapper .post,
+.blog .lead-blog-post .post {
+  background: #384f5b;
+  width: 100%;
+  margin-bottom: 2.5em; }
+  .blog .articles-wrapper .post:after,
+  .blog .lead-blog-post .post:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .blog .articles-wrapper .post:hover,
+  .blog .lead-blog-post .post:hover {
+    background-color: #4b6a7b; }
+  .blog .articles-wrapper .post a,
+  .blog .lead-blog-post .post a {
+    text-decoration: none; }
+  .blog .articles-wrapper .post .content,
+  .blog .lead-blog-post .post .content {
+    position: relative;
+    height: 100%; }
+    .blog .articles-wrapper .post .content .entry-header,
+    .blog .lead-blog-post .post .content .entry-header {
+      padding-top: 0; }
+  .blog .articles-wrapper .post.has-post-thumbnail .content,
+  .blog .lead-blog-post .post.has-post-thumbnail .content {
+    width: auto; }
+    @media screen and (min-width: 600px) {
+      .blog .articles-wrapper .post.has-post-thumbnail .content,
+      .blog .lead-blog-post .post.has-post-thumbnail .content {
+        height: 100%; } }
+  .blog .articles-wrapper .post .thumbnail,
+  .blog .lead-blog-post .post .thumbnail {
+    width: 100%; }
+    @media screen and (min-width: 600px) {
+      .blog .articles-wrapper .post .thumbnail,
+      .blog .lead-blog-post .post .thumbnail {
+        width: 50%;
+        height: 100%;
+        background-size: cover; } }
+
+.blog .articles-wrapper .byline,
+.blog .articles-wrapper .posted-on,
+.blog .articles-wrapper .cat-links,
+.blog .articles-wrapper .tags-links,
+.blog .lead-blog-post .byline,
+.blog .lead-blog-post .posted-on,
+.blog .lead-blog-post .cat-links,
+.blog .lead-blog-post .tags-links {
+  display: block;
+  color: rgba(255, 255, 255, 0.7);
+  opacity: .7;
+  font-size: .875rem;
+  line-height: 1.5; }
+  .blog .articles-wrapper .byline a,
+  .blog .articles-wrapper .posted-on a,
+  .blog .articles-wrapper .cat-links a,
+  .blog .articles-wrapper .tags-links a,
+  .blog .lead-blog-post .byline a,
+  .blog .lead-blog-post .posted-on a,
+  .blog .lead-blog-post .cat-links a,
+  .blog .lead-blog-post .tags-links a {
+    color: rgba(255, 255, 255, 0.7);
+    opacity: inherit;
+    text-decoration: none; }
+    .blog .articles-wrapper .byline a:hover, .blog .articles-wrapper .byline a:focus,
+    .blog .articles-wrapper .posted-on a:hover,
+    .blog .articles-wrapper .posted-on a:focus,
+    .blog .articles-wrapper .cat-links a:hover,
+    .blog .articles-wrapper .cat-links a:focus,
+    .blog .articles-wrapper .tags-links a:hover,
+    .blog .articles-wrapper .tags-links a:focus,
+    .blog .lead-blog-post .byline a:hover,
+    .blog .lead-blog-post .byline a:focus,
+    .blog .lead-blog-post .posted-on a:hover,
+    .blog .lead-blog-post .posted-on a:focus,
+    .blog .lead-blog-post .cat-links a:hover,
+    .blog .lead-blog-post .cat-links a:focus,
+    .blog .lead-blog-post .tags-links a:hover,
+    .blog .lead-blog-post .tags-links a:focus {
+      color: #fff;
+      text-decoration: underline; }
+
+.blog .articles-wrapper .author,
+.blog .lead-blog-post .author {
+  font-weight: bold; }
+
+.blog .articles-wrapper .cats-tags,
+.blog .lead-blog-post .cats-tags {
+  padding-bottom: .25em; }
+
+.blog .articles-wrapper .clickthrough,
+.blog .lead-blog-post .clickthrough {
+  position: absolute;
+  bottom: 2.0833em;
+  margin-bottom: 0;
+  font-size: .875rem;
+  text-transform: uppercase;
+  letter-spacing: 4.5px; }
+
+.blog .lead-blog-post .post {
+  display: table; }
+
+.blog .lead-blog-post .content {
+  display: block;
+  width: 100%;
+  padding: 2.25rem 2.5rem; }
+  .blog .lead-blog-post .content a {
+    text-decoration: none; }
+    .blog .lead-blog-post .content a:hover {
+      color: #dba62a;
+      text-decoration: underline; }
+  .blog .lead-blog-post .content h3.entry-title > a {
+    color: #ffffff; }
+  .blog .lead-blog-post .content .excerpt {
+    line-spacing: .53px;
+    margin-bottom: 4.625rem; }
+  @media screen and (min-width: 600px) {
+    .blog .lead-blog-post .content {
+      display: table-cell;
+      height: 100%;
+      float: left; } }
+
+.blog .lead-blog-post .posted-on {
+  padding-bottom: 1.5rem; }
+
+.blog .lead-blog-post .thumbnail {
+  display: block;
+  height: 25rem; }
+  @media screen and (min-width: 600px) {
+    .blog .lead-blog-post .thumbnail {
+      display: table-cell;
+      height: 100%; } }
+
 @media screen and (min-width: 600px) {
-  .articles-wrapper {
+  .blog .articles-wrapper {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: row;
@@ -1078,102 +1211,99 @@ button.site-nav__btn {
     -ms-flex-align: stretch;
         align-items: stretch; } }
 
-.articles-wrapper .post {
+.blog .articles-wrapper .post {
   background: #384f5b;
   width: 100%;
   margin-bottom: 2.5em; }
-  .articles-wrapper .post:after {
+  .blog .articles-wrapper .post:after {
     content: "";
     display: table;
     clear: both; }
-  .articles-wrapper .post:hover {
+  .blog .articles-wrapper .post:hover {
     background-color: #4b6a7b; }
   @media screen and (min-width: 600px) {
-    .articles-wrapper .post {
+    .blog .articles-wrapper .post {
       width: 45.5%; } }
   @media screen and (min-width: 900px) {
-    .articles-wrapper .post {
+    .blog .articles-wrapper .post {
       width: 30%; } }
   @media screen and (min-width: 1200px) {
-    .articles-wrapper .post {
+    .blog .articles-wrapper .post {
       width: 23%; } }
-  .articles-wrapper .post a {
-    text-decoration: none; }
-  .articles-wrapper .post .content {
+  .blog .articles-wrapper .post .content {
     position: relative;
     padding: 1.5em 1.786em 1.786em;
     height: 100%; }
-    .articles-wrapper .post .content .entry-header {
+    .blog .articles-wrapper .post .content .entry-header {
       padding-top: 0; }
   @media screen and (min-width: 600px) {
-    .articles-wrapper .post.has-post-thumbnail {
+    .blog .articles-wrapper .post.has-post-thumbnail {
       width: 100%; } }
   @media screen and (min-width: 900px) {
-    .articles-wrapper .post.has-post-thumbnail {
+    .blog .articles-wrapper .post.has-post-thumbnail {
       width: 65%; } }
   @media screen and (min-width: 1200px) {
-    .articles-wrapper .post.has-post-thumbnail {
+    .blog .articles-wrapper .post.has-post-thumbnail {
       width: 48.6667%; } }
-  .articles-wrapper .post.has-post-thumbnail .content {
+  .blog .articles-wrapper .post.has-post-thumbnail .content {
     width: auto; }
     @media screen and (min-width: 600px) {
-      .articles-wrapper .post.has-post-thumbnail .content {
+      .blog .articles-wrapper .post.has-post-thumbnail .content {
         width: 50%;
         height: 100%;
         float: left; } }
-  .articles-wrapper .post .entry-title {
+  .blog .articles-wrapper .post .entry-title {
     margin-bottom: 46px; }
-  .articles-wrapper .post .thumbnail {
+  .blog .articles-wrapper .post .thumbnail {
     display: block;
-    width: 100%;
     height: 15em; }
     @media screen and (min-width: 600px) {
-      .articles-wrapper .post .thumbnail {
+      .blog .articles-wrapper .post .thumbnail {
         width: 50%;
         float: right;
         height: 100%;
         background-size: cover; } }
 
-.articles-wrapper .byline,
-.articles-wrapper .posted-on,
-.articles-wrapper .cat-links,
-.articles-wrapper .tags-links {
+.blog .articles-wrapper .byline,
+.blog .articles-wrapper .posted-on,
+.blog .articles-wrapper .cat-links,
+.blog .articles-wrapper .tags-links {
   display: block;
   color: rgba(255, 255, 255, 0.7);
   opacity: .7;
-  font-size: .85714em;
+  font-size: .875rem;
   line-height: 1.5; }
-  .articles-wrapper .byline a,
-  .articles-wrapper .posted-on a,
-  .articles-wrapper .cat-links a,
-  .articles-wrapper .tags-links a {
+  .blog .articles-wrapper .byline a,
+  .blog .articles-wrapper .posted-on a,
+  .blog .articles-wrapper .cat-links a,
+  .blog .articles-wrapper .tags-links a {
     color: rgba(255, 255, 255, 0.7);
     opacity: inherit;
     text-decoration: none; }
-    .articles-wrapper .byline a:hover, .articles-wrapper .byline a:focus,
-    .articles-wrapper .posted-on a:hover,
-    .articles-wrapper .posted-on a:focus,
-    .articles-wrapper .cat-links a:hover,
-    .articles-wrapper .cat-links a:focus,
-    .articles-wrapper .tags-links a:hover,
-    .articles-wrapper .tags-links a:focus {
+    .blog .articles-wrapper .byline a:hover, .blog .articles-wrapper .byline a:focus,
+    .blog .articles-wrapper .posted-on a:hover,
+    .blog .articles-wrapper .posted-on a:focus,
+    .blog .articles-wrapper .cat-links a:hover,
+    .blog .articles-wrapper .cat-links a:focus,
+    .blog .articles-wrapper .tags-links a:hover,
+    .blog .articles-wrapper .tags-links a:focus {
       color: #fff;
       text-decoration: underline; }
 
-.articles-wrapper .author {
+.blog .articles-wrapper .author {
   font-weight: bold; }
 
-.articles-wrapper .posted-on {
+.blog .articles-wrapper .posted-on {
   padding-bottom: 1.2em; }
 
-.articles-wrapper .cats-tags {
+.blog .articles-wrapper .cats-tags {
   padding-bottom: .25em; }
 
-.articles-wrapper .clickthrough {
+.blog .articles-wrapper .clickthrough {
   position: absolute;
   bottom: 2.0833em;
   margin-bottom: 0;
-  font-size: .85714em;
+  font-size: .875rem;
   text-transform: uppercase;
   letter-spacing: 4.5px; }
 
@@ -1184,6 +1314,9 @@ button.site-nav__btn {
 
 h1.entry-title {
   font-size: 5em; }
+
+h3.entry-title {
+  font-size: 1.425rem; }
 
 .single .post-main {
   background: #15232a;
