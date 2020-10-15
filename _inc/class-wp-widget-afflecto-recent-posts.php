@@ -52,11 +52,11 @@ class WP_Widget_AfflectoMM_Recent_Posts extends WP_Widget {
 		/** This filter is documented in wp-includes/widgets/class-wp-widget-pages.php */
 		$title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
 
-		$default_subtitle = __( 'From the Blog' );
-		$subtitle         = ( ! empty( $instance['subtitle'] ) ) ? $instance['subtitle'] : $default_subtitle;
+		$default_subhead = __( 'From the Blog' );
+		$subhead         = ( ! empty( $instance['subhead'] ) ) ? $instance['subhead'] : $default_subhead;
 
 		/** This filter is documented in wp-includes/widgets/class-wp-widget-pages.php */
-		$subtitle = apply_filters( 'widget_title', $subtitle, $instance, $this->id_base );
+		$subhead = apply_filters( 'widget_title', $subhead, $instance, $this->id_base );
 
 		$number = ( ! empty( $instance['number'] ) ) ? absint( $instance['number'] ) : 3;
 		if ( ! $number ) {
@@ -95,8 +95,8 @@ class WP_Widget_AfflectoMM_Recent_Posts extends WP_Widget {
 		<?php echo $args['before_widget']; ?>
 
 		<?php
-		if ( $subtitle ) {
-			echo "<p class=\"subtitle\">$subtitle</p>";
+		if ( $subhead ) {
+			echo "<p class=\"subhead\">$subhead</p>";
 		}
 		if ( $title ) {
 			echo $args['before_title'] . $title . $args['after_title'];
@@ -110,7 +110,7 @@ class WP_Widget_AfflectoMM_Recent_Posts extends WP_Widget {
 		if ( 'html5' === $format ) {
 			// The title may be filtered: Strip out HTML and make sure the aria-label is never empty.
 			$title      = trim( strip_tags( $title ) );
-			$subtitle   = trim( strip_tags( $subtitle ) );
+			$subhead   = trim( strip_tags( $subhead ) );
 			$aria_label = $title ? $title : $default_title;
 			echo '<nav role="navigation" aria-label="' . esc_attr( $aria_label ) . '">';
 		}
@@ -170,7 +170,7 @@ class WP_Widget_AfflectoMM_Recent_Posts extends WP_Widget {
 	public function update( $new_instance, $old_instance ) {
 		$instance              = $old_instance;
 		$instance['title']     = sanitize_text_field( $new_instance['title'] );
-		$instance['subtitle']  = sanitize_text_field( $new_instance['subtitle'] );
+		$instance['subhead']  = sanitize_text_field( $new_instance['subhead'] );
 		$instance['number']    = (int) $new_instance['number'];
 		return $instance;
 	}
@@ -184,7 +184,7 @@ class WP_Widget_AfflectoMM_Recent_Posts extends WP_Widget {
 	 */
 	public function form( $instance ) {
 		$title     = isset( $instance['title'] ) ? esc_attr( $instance['title'] ) : '';
-		$subtitle  = isset( $instance['subtitle'] ) ? esc_attr( $instance['subtitle'] ) : '';
+		$subhead  = isset( $instance['subhead'] ) ? esc_attr( $instance['subhead'] ) : '';
 		$number    = isset( $instance['number'] ) ? absint( $instance['number'] ) : 5;
 		?>
 		<p>
@@ -193,8 +193,8 @@ class WP_Widget_AfflectoMM_Recent_Posts extends WP_Widget {
 		</p>
 
 		<p>
-			<label for="<?php echo $this->get_field_id( 'subtitle' ); ?>"><?php _e( 'Subtitle:' ); ?></label>
-			<input class="widefat" id="<?php echo $this->get_field_id( 'subtitle' ); ?>" name="<?php echo $this->get_field_name( 'subtitle' ); ?>" type="text" value="<?php echo $subtitle; ?>" />
+			<label for="<?php echo $this->get_field_id( 'subhead' ); ?>"><?php _e( 'Subtitle:' ); ?></label>
+			<input class="widefat" id="<?php echo $this->get_field_id( 'subhead' ); ?>" name="<?php echo $this->get_field_name( 'subhead' ); ?>" type="text" value="<?php echo $subhead; ?>" />
 		</p>
 
 		<p>

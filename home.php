@@ -87,6 +87,9 @@ get_header();
 						?>
 					</div>
 
+					<p class="subhead">From the Blog</p>
+					<h2>Recent News</h2>
+
 					<div class="articles-wrapper">
 
 					<?php
