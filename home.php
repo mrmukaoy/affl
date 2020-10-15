@@ -71,6 +71,7 @@ get_header();
 					<div class="lead-blog-post">
 						<?php
 						$count = $i;
+
 						$v = get_bloginfo( 'version' );
 						if ( version_compare( $v, '5.5', '>=' ) ) {
 							// WP 5.5+ ONLY
@@ -84,6 +85,7 @@ get_header();
 						} else {
 							include( locate_template( '_inc/template-parts/content-rollup-post.php' ) );
 						}
+						
 						?>
 					</div>
 
@@ -99,8 +101,6 @@ get_header();
 					 * If you want to override this in a child theme, then include a file
 					 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
 					 */
-					// get_template_part( '_inc/template-parts/content-rollup', get_post_type() );
-
 
 					// WP 5.5+ ONLY
 					$v = get_bloginfo( 'version' );
@@ -114,8 +114,9 @@ get_header();
 								'version' => $v,
 							)
 						);
+					} else {
+						include( locate_template( '_inc/template-parts/content-rollup-post.php' ) );
 					}
-
 				}
 
 				$i++;
