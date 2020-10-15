@@ -69,24 +69,7 @@ get_header();
 				if ( $i == 1 ) { ?>
 
 					<div class="lead-blog-post">
-						<?php
-						$count = $i;
-
-						$v = get_bloginfo( 'version' );
-						if ( version_compare( $v, '5.5', '>=' ) ) {
-							// WP 5.5+ ONLY
-							get_template_part(
-								'_inc/template-parts/content-rollup-post',
-								null,
-								array(
-									'count' => $i,
-								)
-							);
-						} else {
-							include( locate_template( '_inc/template-parts/content-rollup-post.php' ) );
-						}
-						
-						?>
+						<?php get_template_part( '_inc/template-parts/content-rollup-lead', get_post_type() ); ?>
 					</div>
 
 					<p class="subhead">From the Blog</p>
@@ -102,21 +85,8 @@ get_header();
 					 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
 					 */
 
-					// WP 5.5+ ONLY
-					$v = get_bloginfo( 'version' );
-					if ( version_compare( $v, '5.5', '>=' ) ) {
-						// WordPress version is (or greater than) 5.5
-						get_template_part(
-							'_inc/template-parts/content-rollup-post',
-							null,
-							array(
-								'count' => $i,
-								'version' => $v,
-							)
-						);
-					} else {
-						include( locate_template( '_inc/template-parts/content-rollup-post.php' ) );
-					}
+					get_template_part( '_inc/template-parts/content-rollup', get_post_type() );
+
 				}
 
 				$i++;

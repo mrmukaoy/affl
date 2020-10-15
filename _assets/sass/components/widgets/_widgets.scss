@@ -12,16 +12,28 @@
 		margin-bottom: 1.5rem;
 	}
 
-	.subhead {
-		color: $yellow;
-		font-size: 1em;
-		letter-spacing: 6px;
-		text-transform: uppercase;
-		padding-bottom: 0;
-		margin-bottom: 0;
+	&.widget_recent_entries {
+		.subhead {
+			color: $yellow;
+			font-size: 1em;
+			letter-spacing: 6px;
+			text-transform: uppercase;
+			padding-bottom: 0;
+			margin-bottom: 0;
+		}
+
+		.entry-title {
+			margin-left: 0;
+			margin-right: 0;
+		}
 	}
 }
 
 .widget-area {
 	padding-top: 6em;
+	margin: 0 40px;
+
+	@media screen and (min-width: 900px) {
+		margin: 0;
+	}
 }

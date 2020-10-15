@@ -18,7 +18,7 @@ if ( has_term( 'show-on-archive', 'show_thumbs' ) ) {
 }
 ?>
 
-<article id="post-<?php the_ID(); ?>" class="<?php echo $class; ?>"><a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark">
+<article id="post-<?php the_ID(); ?>" class="<?php echo $class; ?>">
 	<div class="content">
 		<header class="entry-header">
 			<div class="entry-meta">
@@ -30,15 +30,16 @@ if ( has_term( 'show-on-archive', 'show_thumbs' ) ) {
 			</div><!-- .entry-meta -->
 		</header><!-- .entry-header -->
 
-		<h3 class="entry-title"><?php the_title(); ?></h3>
+		<h3 class="entry-title"><a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
+		<p class="excerpt"><?php echo get_the_excerpt(); ?></p>
 
-		<p class="clickthrough">Read more &rarr;</p>
+		<p class="clickthrough"><a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark">Read more &rarr;</a></p>
 	</div>
 
 	<?php // show (or don't show) the thumbnail here
-	if ( has_post_thumbnail( get_the_ID() ) && has_term( 'show-on-archive', 'show_thumbs' ) ) {
+	if ( has_post_thumbnail() ) {
 		$img_url = get_the_post_thumbnail_url( get_the_ID() ); ?>
 	<div class="thumbnail" style="background: url('<?php echo esc_url( $img_url ); ?>') center;"></div>
 	<?php } ?>
 
-</a></article><!-- #post-<?php the_ID(); ?> -->
+</article><!-- #post-<?php the_ID(); ?> -->
