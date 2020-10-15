@@ -19,11 +19,11 @@
 	background-color:#152329;
 	height: 130px;
 
-	@media (min-width:600px) {
+	@media screen and (min-width:600px) {
 		height: 110px;
 	}
 
-	@media (min-width:900px) {
+	@media screen and (min-width:900px) {
 		height: 80px;
 	}
 }

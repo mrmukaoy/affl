@@ -16,11 +16,11 @@ body {
 	min-height: calc(100vh - 130px);
 
 	/* these coincide with height of .site-footer__spacer */
-	@media (min-width:600px) {
+	@media screen and (min-width:600px) {
 		min-height: calc(100vh - 110px);
 	}
 
-	@media (min-width:900px) {
+	@media screen and (min-width:900px) {
 		min-height: calc(100vh - 80px);
 	}
 
@@ -58,11 +58,11 @@ body {
 	margin: 0 auto;
 
 	/* these align with height of .site-footer__spacer */
-	@media (min-width:600px) {
+	@media screen and (min-width:600px) {
 		padding-bottom: 140px;
 	}
 
-	@media (min-width:900px) {
+	@media screen and (min-width:900px) {
 		padding: 0 0 110px;
 	}
 
@@ -75,12 +75,12 @@ body {
 		max-width: 75em;
 		padding: 5rem 2.5rem 2.5rem;
 
-		@media (min-width:900px) {
+		@media screen and (min-width:900px) {
 			padding-top: 13.5rem;
 			padding-bottom: 4rem;
 		}
 
-		@media (min-width:1100px) {
+		@media screen and (min-width:1100px) {
 			padding-bottom: 6rem;
 		}
 	}
@@ -99,7 +99,7 @@ body {
 	max-width: 280px;
 	margin: 0 auto;
 
-	@media (min-width:600px) {
+	@media screen and (min-width:600px) {
 		max-width: 100%;
 	}
 
@@ -109,11 +109,11 @@ body {
 		margin-bottom: 3em;
 		@include clearfix();
 
-		@media (min-width:600px) {
+		@media screen and (min-width:600px) {
 			text-align: left;
 		}
 
-		@media (min-width:1080px) {
+		@media screen and (min-width:1080px) {
 			&.half {
 				position: relative;
 				width: 47%;
@@ -132,7 +132,7 @@ body {
 	.wp-block-column {
 		display: block;
 
-		@media (min-width:600px) {
+		@media screen and (min-width:600px) {
 			display: inline-block;
 
 			&:first-child {
@@ -155,7 +155,7 @@ body {
 		padding-top: .5rem;
 		width: 100%;
 
-		@media (min-width:600px) {
+		@media screen and (min-width:600px) {
 			padding-top: 70px;
 			width: calc(100% - 225px);
 		}

@@ -3,7 +3,7 @@
 	width: 34px;
 	height: 40px;
 
-	@media (max-width: 899px) {
+	@media screen and (max-width: 899px) {
 		margin: 8px 23px;
 
 		.site-header.menu-is-open & {
@@ -21,7 +21,7 @@
 }
 /*
 .mark--animate {
-	@media (max-width: 899px) {
+	@media screen and (max-width: 899px) {
 		-webkit-transform: translateX(50vw);
 		transform: translateX(50vw);
 		margin: 0 0 0 -17px;
@@ -38,7 +38,7 @@
 	background-color: rgba(21,35,41,.4);
 	box-shadow: 0 3px 15px 0 rgba(0,0,0,.19999999999999996);
 
-	@media (min-width: 900px) {
+	@media screen and (min-width: 900px) {
 		position: absolute;
 		padding: 0;
 		height: 80px;

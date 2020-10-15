@@ -1,7 +1,7 @@
 .site-main {
 	padding-top: 5em;
 
-	@media (min-width: 900px) {
+	@media screen and (min-width: 900px) {
 		padding-top: 10em;
 	}
 
@@ -40,7 +40,7 @@
 .entry-summary {
 	margin: 60px 40px 0;
 
-	@media (min-width: 900px) {
+	@media screen and (min-width: 900px) {
 		margin: 80px 80px 0;
 	}
 
@@ -578,6 +578,7 @@ h3.entry-title {
 
 #lets-work-together {
 	background-color: #384f5b;
+	background: url('_assets/images/lets-talk.svg') no-repeat 50% calc(100% - 30vw),url('_assets/images/contact-tile.png') repeat 0 0;
 	padding: 7em 0 140px;
 	margin-bottom: -140px;
 }
@@ -635,7 +636,7 @@ h3.entry-title {
 	align-items: center;
 	height: 600px;
 
-	@media (min-width: 600px) {
+	@media screen and (min-width: 600px) {
 		height: 800px;
 	}
 
@@ -653,7 +654,7 @@ h3.entry-title {
 	-ms-flex-direction: column;
 	flex-direction: column;
 
-	@media (min-width: 600px) {
+	@media screen and (min-width: 600px) {
 		height: 900px;
 	}
 
@@ -675,15 +676,16 @@ h3.entry-title {
 		overflow: visible;
 		background-color: transparent;
 
-		@media (min-width: 600px) {
+		@media screen and (min-width: 600px) {
 			margin-top: -67px;
 			margin-bottom: -67px;
 		}
-		@media (min-width: 900px) {
+		@media screen and (min-width: 900px) {
 			margin-top: -100px;
 			margin-bottom: -100px;
 		}
 	}
+
 	.slant__content {
 		-webkit-transform: none;
 		transform: none;
@@ -694,14 +696,14 @@ h3.entry-title {
 		clip-path: polygon(0 50px,0 650px,100vw 700px,100vw 0,0 50px);
 		background-color: #152329;
 
-		@media (min-width: 600px) {
+		@media screen and (min-width: 600px) {
 			height: 900px;
 			-webkit-clip-path: polygon(0 67px,0 833px,100vw 900px,100vw 0,0 67px);
 			clip-path: polygon(0 67px,0 833px,100vw 900px,100vw 0,0 67px);
 			max-height: none;
 		}
 
-		@media (min-width:900px) {
+		@media screen and (min-width:900px) {
 			height: 900px;
 			-webkit-clip-path: polygon(0 100px,0 800px,100vw 900px,100vw 0,0 100px);
 			clip-path: polygon(0 100px,0 800px,100vw 900px,100vw 0,0 100px);
@@ -709,6 +711,7 @@ h3.entry-title {
 		}
 	}
 }
+
 .slant__buzz {
 	position: absolute;
 	top: -5vw;
@@ -733,56 +736,57 @@ h3.entry-title {
 	-ms-flex-pack: justify;
 	justify-content: space-between;
 
-	@media (min-width: 600px) {
+	@media screen and (min-width: 600px) {
 		font-size: 250px;
 	}
 
-	@media (min-width: 900px) {
+	@media screen and (min-width: 900px) {
 		font-size: 275px;
 	}
 
-	@media (min-width: 1200px) {
+	@media screen and (min-width: 1200px) {
 		font-size: 300px;
 	}
 }
+
 .slant__buzz-word {
-width:100%;
+	width:100%;
 }
+
 .slant__buzz-word:nth-child(1) {
--webkit-transform:translateX(-100px);
-transform:translateX(-100px);
-}
-@media (min-width:1200px) {
-	.slant__buzz-word:nth-child(1) {
-	-webkit-transform:none;
-	transform:none;
-	padding-left:3vw;
+	-webkit-transform:translateX(-100px);
+	transform:translateX(-100px);
+
+	@media screen and (min-width:1200px) {
+		-webkit-transform:none;
+		transform:none;
+		padding-left:3vw;
 	}
 }
+
 .slant__buzz-word:nth-child(2) {
--webkit-transform:translateX(100px);
-transform:translateX(100px);
-text-align:right;
-margin-top:-75px;
-}
-@media (min-width:1200px) {
-	.slant__buzz-word:nth-child(2) {
-	-webkit-transform:translateX(50px);
-	transform:translateX(50px);
-	margin-top:-150px;
-	margin-bottom:-125px;
+	-webkit-transform:translateX(100px);
+	transform:translateX(100px);
+	text-align:right;
+	margin-top:-75px;
+
+	@media screen and (min-width:1200px) {
+		-webkit-transform:translateX(50px);
+		transform:translateX(50px);
+		margin-top:-150px;
+		margin-bottom:-125px;
 	}
 }
+
 .slant__buzz-word:nth-child(3) {
--webkit-transform:translateX(10px);
-transform:translateX(10px);
-text-align:right;
-}
-@media (min-width:1200px) {
-	.slant__buzz-word:nth-child(3) {
-	-webkit-transform:none;
-	transform:none;
-	padding-right:10vw;
+	-webkit-transform:translateX(10px);
+	transform:translateX(10px);
+	text-align:right;
+
+	@media screen and (min-width:1200px) {
+		-webkit-transform:none;
+		transform:none;
+		padding-right:10vw;
 	}
 }
 
