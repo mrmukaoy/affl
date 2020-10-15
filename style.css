@@ -862,7 +862,7 @@ button.site-nav__btn {
   border-radius: 0;
   transition: opacity 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
   z-index: 10; }
-  button.site-nav__btn:hover {
+  button.site-nav__btn:hover, button.site-nav__btn:focus {
     cursor: pointer; }
   @media screen and (min-width: 900px) {
     button.site-nav__btn {
@@ -1073,8 +1073,9 @@ button.site-nav__btn {
     content: "";
     display: table;
     clear: both; }
-  .articles-wrapper .post:hover,
-  .lead-blog-post .post:hover {
+  .articles-wrapper .post:hover, .articles-wrapper .post:focus,
+  .lead-blog-post .post:hover,
+  .lead-blog-post .post:focus {
     background-color: #4b6a7b; }
   .articles-wrapper .post a,
   .lead-blog-post .post a {
@@ -1174,13 +1175,13 @@ button.site-nav__btn {
   padding: 2.25rem 2.5rem; }
   .lead-blog-post .content a {
     text-decoration: none; }
-    .lead-blog-post .content a:hover {
+    .lead-blog-post .content a:hover, .lead-blog-post .content a:focus {
       color: #dba62a;
       text-decoration: underline; }
   .lead-blog-post .content h3.entry-title > a {
     color: #ffffff;
     margin-bottom: 0; }
-    .lead-blog-post .content h3.entry-title > a:hover {
+    .lead-blog-post .content h3.entry-title > a:hover, .lead-blog-post .content h3.entry-title > a:focus {
       color: #dba62a;
       text-decoration: underline; }
   .lead-blog-post .content .excerpt {
@@ -1243,6 +1244,11 @@ button.site-nav__btn {
     height: 100%; }
     .articles-wrapper .post .content .entry-header {
       padding-top: 0; }
+    .articles-wrapper .post .content h3.entry-title {
+      color: #ffffff; }
+      .articles-wrapper .post .content h3.entry-title:hover, .articles-wrapper .post .content h3.entry-title:focus {
+        color: #f7bf3b;
+        text-decoration: underline; }
   @media screen and (min-width: 600px) {
     .articles-wrapper .post.has-post-thumbnail {
       width: 100%; } }
