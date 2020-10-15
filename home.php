@@ -66,7 +66,7 @@ get_header();
 			while ( have_posts() ) {
 				the_post();
 
-				if ( $i == 1 ) { ?>
+				if ( $i == 1  && ! is_paged() ) { ?>
 
 					<div class="lead-blog-post">
 						<?php get_template_part( '_inc/template-parts/content-rollup-lead', get_post_type() ); ?>
@@ -84,6 +84,11 @@ get_header();
 					 * If you want to override this in a child theme, then include a file
 					 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
 					 */
+
+					if ( $i == 1 && is_paged() ) {
+						echo '<div class="articles-wrapper">' . "\n";
+
+					}
 
 					get_template_part( '_inc/template-parts/content-rollup', get_post_type() );
 
