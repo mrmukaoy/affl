@@ -80,7 +80,7 @@ body {
 			padding-bottom: 4rem;
 		}
 
-		@media screen and (min-width:1100px) {
+		@media screen and (min-width:69rem) {
 			padding-bottom: 6rem;
 		}
 	}
@@ -93,7 +93,7 @@ body {
 }
 
 /** FRONT PAGE - SERVICES LIST **/
-.home-services-list {
+.services__content {
 	position: relative;
 	width: 100%;
 	max-width: 280px;

@@ -21,7 +21,9 @@
 			<?php echo file_get_contents( get_stylesheet_directory_uri() . '/_assets/images/logo-full.svg' ); ?>
 		</div>
 
-		<?php get_template_part( '_inc/template-parts/socialbar' ); ?>
+		<div class="hero__social">
+			<?php get_template_part( '_inc/template-parts/socialbar' ); ?>
+		</div>
 
 	</div>
 
