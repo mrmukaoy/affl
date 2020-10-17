@@ -602,10 +602,6 @@ h3.entry-title {
 	background-size: cover;
 	padding:15vw 32px;
 
-	&.slant__content--gutter {
-		padding: 4rem 24px;
-	}
-
 	.services__content {
 		margin:0 auto;
 		max-width: 69rem;
@@ -613,6 +609,73 @@ h3.entry-title {
 		@media screen and (min-width: 600px) {
 			display:flex;
 			flex-direction:column;
+		}
+	}
+
+	.service {
+		width: 100%;
+		text-align: center;
+
+		@media screen and (min-width: 900px) {
+			display: flex;
+			align-items: center;
+			text-align: left;
+			max-width: 28rem;
+		}
+
+		& + & {
+			margin-top: 3rem;
+		}
+
+		@media screen and (min-width: 900px) {
+			margin-top: 0;
+
+			.service:nth-child(even) {
+				align-self:flex-end;
+			}
+		}
+	}
+
+	.service__image.wp-block-image {
+		position: static;
+		width: 100%;
+		max-width: 13.75rem;
+		margin: 0 0 .5rem;
+
+		@media screen and (min-width:600px) {
+			max-width: 9.25rem;
+		}
+
+		@media screen and (min-width:900px) {
+			flex: 0 0 auto;
+			margin-right: 1.5rem;
+		}
+
+		img {
+			box-shadow: 0 0 25px 0 rgba(0,0,0,.4);
+			background-color: transparent;
+			border-radius: 50%;
+		}
+	}
+
+	.service__title {
+		font-size: 1.5rem;
+		margin-bottom: .25rem;
+	}
+
+	.service__list {
+		list-style-type: none;
+		margin: 0 auto;
+		padding: 0;
+		max-width: 14.25rem;
+
+		@media screen and (min-width:900px) {
+			max-width: none;
+			font-size: 14px;
+
+			li + li {
+				margin-top:16px;
+			}
 		}
 	}
 }
