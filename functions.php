@@ -164,11 +164,29 @@ function affl_scripts() {
 
 	wp_enqueue_script( 'affl-navigation', get_template_directory_uri() . '/_assets/js/navigation.js', array(), _S_VERSION, true );
 
+
+	// On Front Page, TweenMax & Scroll Magic animations
+	if( is_front_page() ) {
+		wp_register_script( 'gsap', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js', array(), '3.5.1', true );
+		wp_register_script( 'scroll-magic', 'https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.js', array('jquery'), '2.07', true );
+		wp_register_script( 'scroll-magic-add-indicators', 'https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js', array('jquery'), '2.07', true );
+		wp_register_script( 'scroll-magic-animations', 'https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.js', array('jquery'), '2.07', true );
+
+		wp_enqueue_script( 'gsap' );
+		wp_enqueue_script( 'scroll-magic' );
+		wp_enqueue_script( 'scroll-magic-add-indicators' );
+		wp_enqueue_script( 'scroll-magic-animations' );
+
+		wp_register_script( 'affl-animations', get_template_directory_uri() . '/_assets/js/animations.js', array(), _S_VERSION, true );
+		wp_enqueue_script( 'affl-animations' );
+	}
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'affl_scripts' );
+
 
 /**
  * Add social media accounts to customizer

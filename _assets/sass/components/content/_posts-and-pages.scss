@@ -606,32 +606,10 @@ h3.entry-title {
 		margin:0 auto;
 		max-width: 69rem;
 
-		@media screen and (min-width: 600px) {
-			display:flex;
-			flex-direction:column;
-		}
-	}
-
-	.service {
-		width: 100%;
-		text-align: center;
-
-		@media screen and (min-width: 900px) {
-			display: flex;
-			align-items: center;
-			text-align: left;
-			max-width: 28rem;
-		}
-
-		& + & {
-			margin-top: 3rem;
-		}
-
-		@media screen and (min-width: 900px) {
-			margin-top: 0;
-
-			.service:nth-child(even) {
-				align-self:flex-end;
+		> .wp-block-group__inner-container {
+			@media screen and (min-width: 600px) {
+				display:flex;
+				flex-direction:column;
 			}
 		}
 	}
@@ -639,11 +617,11 @@ h3.entry-title {
 	.service__image.wp-block-image {
 		position: static;
 		width: 100%;
-		max-width: 13.75rem;
+		max-width: 9.25rem;
 		margin: 0 0 .5rem;
 
 		@media screen and (min-width:600px) {
-			max-width: 9.25rem;
+			max-width: 13.75rem;
 		}
 
 		@media screen and (min-width:900px) {
@@ -660,7 +638,7 @@ h3.entry-title {
 
 	.service__title {
 		font-size: 1.5rem;
-		margin-bottom: .25rem;
+		margin: 0 0 .25rem;
 	}
 
 	.service__list {
@@ -673,14 +651,47 @@ h3.entry-title {
 			max-width: none;
 			font-size: 14px;
 
-			li + li {
+			/* li + li {
 				margin-top:16px;
-			}
+			} */
+		}
+
+		li {
+			line-height: normal;
 		}
 	}
 }
 
+.service {
+	width: 100%;
+	text-align: center;
 
+	@media screen and (min-width: 900px) {
+		text-align: left;
+		max-width: 28rem;
+	}
+
+	> .wp-block-group__inner-container {
+		@media screen and (min-width: 900px) {
+			display: flex;
+			align-items: center;
+			text-align: left;
+			max-width: 100%;
+		}
+	}
+
+	& + & {
+		margin-top: 3rem;
+	}
+
+	@media screen and (min-width: 900px) {
+		margin-top: 0;
+
+		&:nth-child(even) {
+			align-self:flex-end;
+		}
+	}
+}
 
 #lets-work-together {
 	background-color: #384f5b;
@@ -829,6 +840,7 @@ h3.entry-title {
 	pointer-events: none;
 	color: rgba(0,0,0,.15000000000000002);
 	font-size: 175px;
+	line-height: normal;
 	font-weight: 700;
 	font-style: italic;
 	display: -webkit-box;
