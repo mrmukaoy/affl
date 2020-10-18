@@ -133,13 +133,21 @@
 		color: $yellow;
 	}
 
-	.notice-me {
+	.quotes__header {
+		width: 100%;
+		text-align: center;
+		padding: 0 1rem;
+	}
+
+	.quotes__heading {
 		background-color: $yellow;
+		display: inline-block;
 		color: $background;
 		text-align: center;
 		text-transform: uppercase;
 		font-weight: bold;
 		padding: .75rem 1.875rem;
+		margin: 0;
 	}
 
 	.hush {
@@ -168,7 +176,7 @@
 			font-style: italic;
 		}
 
-		.contact {
+		.contact__content {
 			display: inline-block;
 			padding-top: 1.5rem;
 		}
@@ -693,11 +701,16 @@ h3.entry-title {
 	}
 }
 
-#lets-work-together {
+#contact {
 	background-color: #384f5b;
 	background: url('_assets/images/lets-talk.svg') no-repeat 50% calc(100% - 30vw),url('_assets/images/contact-tile.png') repeat 0 0;
 	padding: 7em 0 140px;
 	margin-bottom: -140px;
+}
+
+.contact__info {
+	margin-top: 1.5rem;
+	display: inline-block;
 }
 
 /** LARGE THUMBNAIL IMAGE **/

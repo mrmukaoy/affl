@@ -1039,15 +1039,23 @@ button.site-nav__btn {
   .entry-content .callout,
   .entry-summary .callout {
     color: #f7bf3b; }
-  .page-content .notice-me,
-  .entry-content .notice-me,
-  .entry-summary .notice-me {
+  .page-content .quotes__header,
+  .entry-content .quotes__header,
+  .entry-summary .quotes__header {
+    width: 100%;
+    text-align: center;
+    padding: 0 1rem; }
+  .page-content .quotes__heading,
+  .entry-content .quotes__heading,
+  .entry-summary .quotes__heading {
     background-color: #f7bf3b;
+    display: inline-block;
     color: #15232a;
     text-align: center;
     text-transform: uppercase;
     font-weight: bold;
-    padding: .75rem 1.875rem; }
+    padding: .75rem 1.875rem;
+    margin: 0; }
   .page-content .hush,
   .entry-content .hush,
   .entry-summary .hush {
@@ -1075,9 +1083,9 @@ button.site-nav__btn {
     .entry-summary .person .job-title {
       font-weight: normal;
       font-style: italic; }
-    .page-content .person .contact,
-    .entry-content .person .contact,
-    .entry-summary .person .contact {
+    .page-content .person .contact__content,
+    .entry-content .person .contact__content,
+    .entry-summary .person .contact__content {
       display: inline-block;
       padding-top: 1.5rem; }
 
@@ -1503,11 +1511,15 @@ h3.entry-title {
         -ms-flex-item-align: end;
             align-self: flex-end; } }
 
-#lets-work-together {
+#contact {
   background-color: #384f5b;
   background: url("_assets/images/lets-talk.svg") no-repeat 50% calc(100% - 30vw), url("_assets/images/contact-tile.png") repeat 0 0;
   padding: 7em 0 140px;
   margin-bottom: -140px; }
+
+.contact__info {
+  margin-top: 1.5rem;
+  display: inline-block; }
 
 /** LARGE THUMBNAIL IMAGE **/
 .large-post-thumbnail-wrapper {
