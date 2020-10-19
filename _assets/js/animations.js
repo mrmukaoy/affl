@@ -90,6 +90,82 @@
 
 
 	/** Home Services section **/
+	servicesCreativeImageTimeline = new gsap.timeline({ defaults: { duration: 2, transformOrigin: "center", ease: "ease" } });
+	servicesCreativeImageTimeline.from( '.service:nth-child(1) .service__image', { duration: 2, x: -250, opacity: 0 }, .5 );
+	servicesCreativeCopyTimeline = new gsap.timeline({ defaults: { duration: 2, transformOrigin: "center", ease: "ease" } });
+	servicesCreativeCopyTimeline.from( '.service:nth-child(1) .service__copy', { duration: 2, x: 250, opacity: 0 }, .5 );
+	const servicesCreativeImageTween = new ScrollMagic.Scene({
+		triggerElement: '#services .service:nth-child(1)',
+		triggerHook: 'onEnter',
+		duration: .75*servicesHeight
+	})
+	.setTween(servicesCreativeImageTimeline)
+	.addTo(controller);
+	const servicesCreativeCopyTween = new ScrollMagic.Scene({
+		triggerElement: '#services .service:nth-child(1)',
+		triggerHook: 'onEnter',
+		duration: .75*servicesHeight
+	})
+	.setTween(servicesCreativeCopyTimeline)
+	.addTo(controller);
+
+	servicesMediaImageTimeline = new gsap.timeline({ defaults: { duration: 2, transformOrigin: "center", ease: "ease" } });
+	servicesMediaImageTimeline.from( '.service:nth-child(2) .service__image', { duration: 2, x: -250, opacity: 0 }, .5 );
+	servicesMediaCopyTimeline = new gsap.timeline({ defaults: { duration: 2, transformOrigin: "center", ease: "ease" } });
+	servicesMediaCopyTimeline.from( '.service:nth-child(2) .service__copy', { duration: 2, x: 250, opacity: 0 }, .5 );
+	const servicesMediaImageTween = new ScrollMagic.Scene({
+		triggerElement: '#services .service:nth-child(2)',
+		triggerHook: 'onEnter',
+		duration: .75*servicesHeight
+	})
+	.setTween(servicesMediaImageTimeline)
+	.addTo(controller);
+	const servicesMediaCopyTween = new ScrollMagic.Scene({
+		triggerElement: '#services .service:nth-child(2)',
+		triggerHook: 'onEnter',
+		duration: .75*servicesHeight
+	})
+	.setTween(servicesMediaCopyTimeline)
+	.addTo(controller);
+
+	servicesSocialImageTimeline = new gsap.timeline({ defaults: { duration: 2, transformOrigin: "center", ease: "ease" } });
+	servicesSocialImageTimeline.from( '.service:nth-child(3) .service__image', { duration: 2, x: -250, opacity: 0 }, .5 );
+	servicesSocialCopyTimeline = new gsap.timeline({ defaults: { duration: 2, transformOrigin: "center", ease: "ease" } });
+	servicesSocialCopyTimeline.from( '.service:nth-child(3) .service__copy', { duration: 2, x: 250, opacity: 0 }, .5 );
+	const servicesSocialImageTween = new ScrollMagic.Scene({
+		triggerElement: '#services .service:nth-child(3)',
+		triggerHook: 'onEnter',
+		duration: .75*servicesHeight
+	})
+	.setTween(servicesSocialImageTimeline)
+	.addTo(controller);
+	const servicesSocialCopyTween = new ScrollMagic.Scene({
+		triggerElement: '#services .service:nth-child(3)',
+		triggerHook: 'onEnter',
+		duration: .75*servicesHeight
+	})
+	.setTween(servicesSocialCopyTimeline)
+	.addTo(controller);
+
+	servicesAffiliateImageTimeline = new gsap.timeline({ defaults: { duration: 2, transformOrigin: "center", ease: "ease" } });
+	servicesAffiliateImageTimeline.from( '.service:nth-child(4) .service__image', { duration: 2, x: -250, opacity: 0 }, .5 );
+	servicesAffiliateCopyTimeline = new gsap.timeline({ defaults: { duration: 2, transformOrigin: "center", ease: "ease" } });
+	servicesAffiliateCopyTimeline.from( '.service:nth-child(4) .service__copy', { duration: 2, x: 250, opacity: 0 }, .5 );
+	const servicesAffiliateImageTween = new ScrollMagic.Scene({
+		triggerElement: '#services .service:nth-child(4)',
+		triggerHook: 'onEnter',
+		duration: .75*servicesHeight
+	})
+	.setTween(servicesAffiliateImageTimeline)
+	.addTo(controller);
+	const servicesAffiliateCopyTween = new ScrollMagic.Scene({
+		triggerElement: '#services .service:nth-child(4)',
+		triggerHook: 'onEnter',
+		duration: .75*servicesHeight
+	})
+	.setTween(servicesAffiliateCopyTimeline)
+	.addTo(controller);
+
 
 
 	/** Home Testimonials section **/

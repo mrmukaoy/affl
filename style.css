@@ -4,7 +4,7 @@ Theme URI: http://underscores.me/
 Author: Afflecto Media Marketing
 Author URI: https://afflectomm.com/
 Description: Description
-Version: 0.9.9
+Version: 1.0.0
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -944,7 +944,8 @@ button.site-nav__btn {
   .home .page-content, .home
   .entry-content, .home
   .entry-summary {
-    margin: 80px 0 0; }
+    margin: 80px 0 0;
+    overflow: clip; }
   .page-content h2,
   .entry-content h2,
   .entry-summary h2 {
@@ -1462,24 +1463,24 @@ h3.entry-title {
   text-align: center; }
   @media screen and (min-width: 900px) {
     .service {
+      margin-top: 0;
       text-align: left;
-      max-width: 28rem; } }
+      max-width: 28rem; }
+      .service:nth-child(even) {
+        -ms-flex-item-align: end;
+            align-self: flex-end; }
+      .service:nth-child(even) {
+        -ms-flex-item-align: end;
+            align-self: flex-end; } }
   @media screen and (min-width: 900px) {
     .service > .wp-block-group__inner-container {
       display: -ms-flexbox;
       display: flex;
       -ms-flex-align: center;
           align-items: center;
-      text-align: left;
-      max-width: 100%; } }
+      text-align: left; } }
   .service + .service {
     margin-top: 3rem; }
-  @media screen and (min-width: 900px) {
-    .service {
-      margin-top: 0; }
-      .service:nth-child(even) {
-        -ms-flex-item-align: end;
-            align-self: flex-end; } }
 
 #contact {
   background-color: #384f5b;
