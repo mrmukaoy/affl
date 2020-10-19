@@ -65,123 +65,114 @@
 	h6 {
 		font-style: italic;
 	}
+}
 
 .about {
 	display: flex;
-	flex-direction: row;
-	max-width: 40rem;
+	flex-direction: column;
+	max-width: 16.25rem;
+	align-items: center;
+
+	@media screen and (min-width: 600px) {
+		flex-direction: row;
+		max-width: 40rem;
+	}
 }
 
-	.summary {
-		position: relative;
-		font-size: 1.125rem;
-		text-align: center;
-		font-style: italic;
-		line-height: 1.5;
-		// max-width: 43rem;
-		margin: 0 auto;
-		padding: 0 .5rem;
+.summary {
+	position: relative;
+	font-size: 1.125rem;
+	text-align: justify;
+	font-style: italic;
+	line-height: 1.5;
+	// max-width: 43rem;
+	margin: 0 auto;
+	padding: 0 .5rem;
 
-		/*
-		&:before,
-		&:after {
-			font-size: 108px;
-			color: $yellow;
-			position: absolute;
-			top: -2.5rem;
-		}
-
-		&:before {
-			content: '{';
-			left: .5rem;
-		}
-
-		&:after {
-			content: '}';
-			right: .5rem;
-		}
-		*/
+	@media screen and (min-width: 600px) {
+		text-align: left;
 	}
+}
 
-	.about__bracket {
-		-webkit-transform:rotate(82deg);
-		transform:rotate(82deg);
-		width:26px;
-		-webkit-box-flex:0;
-		-ms-flex:0 0 auto;
-		flex:0 0 auto;
+.about__bracket {
+	-webkit-transform: rotate(82deg);
+	transform: rotate(82deg);
+	width: 26px;
+	-webkit-box-flex: 0;
+	-ms-flex: 0 0 auto;
+	flex: 0 0 auto;
 
-		@media screen and (min-width: 600px) {
-			-webkit-transform:none;
-			transform:none;
-		}
+	@media screen and (min-width: 600px) {
+		-webkit-transform: none;
+		transform: none;
 	}
+}
 
-	.about__bracket--right {
-		width:27px;
+.about__bracket--right {
+	width:27px;
+}
+.about__bracket--left {
+	margin-bottom:-20px;
+
+	@media screen and (min-width: 600px) {
+		margin-bottom:0;
 	}
-	.about__bracket--left {
-		margin-bottom:-20px;
-
-		@media screen and (min-width: 600px) {
-			margin-bottom:0;
-		}
-	}
+}
 
 
-	.callout {
-		color: $yellow;
-	}
+.callout {
+	color: $yellow;
+}
 
-	.quotes__header {
-		width: 100%;
-		text-align: center;
-		padding: 0 1rem;
-	}
+.quotes__header {
+	width: 100%;
+	text-align: center;
+	padding: 0 1rem;
+}
 
-	.quotes__heading {
-		background-color: $yellow;
-		display: inline-block;
-		color: $background;
-		text-align: center;
+.quotes__heading {
+	background-color: $yellow;
+	display: inline-block;
+	color: $background;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: bold;
+	padding: .75rem 1.875rem;
+	margin: 0;
+}
+
+.hush {
+	color: #3e5460;
+	font-style: italic;
+}
+
+.invite {
+	color: $yellow;
+	font-size: 1.75rem;
+	font-style: italic;
+	letter-spacing: 1.5px;
+}
+
+.person {
+	font-size: 1.5rem;
+	line-height: 1;
+
+	.name {
 		text-transform: uppercase;
 		font-weight: bold;
-		padding: .75rem 1.875rem;
-		margin: 0;
 	}
 
-	.hush {
-		color: #3e5460;
+	.job-title {
+		font-weight: normal;
 		font-style: italic;
 	}
 
-	.invite {
-		color: $yellow;
-		font-size: 1.75rem;
-		font-style: italic;
-		letter-spacing: 1.5px;
-	}
-
-	.person {
-		font-size: 1.5rem;
-		line-height: 1;
-
-		.name {
-			text-transform: uppercase;
-			font-weight: bold;
-		}
-
-		.job-title {
-			font-weight: normal;
-			font-style: italic;
-		}
-
-		.contact__content {
-			display: inline-block;
-			padding-top: 1.5rem;
-		}
+	.contact__content {
+		display: inline-block;
+		padding-top: 1.5rem;
 	}
 }
+
 
 .blog .page-title {
 	padding-top: .3896em;
@@ -616,17 +607,18 @@ h3.entry-title {
 
 		> .wp-block-group__inner-container {
 			@media screen and (min-width: 600px) {
-				display:flex;
-				flex-direction:column;
+				display: flex;
+				flex-direction: column;
 			}
 		}
 	}
 
 	.service__image.wp-block-image {
 		position: static;
+		display: inline;
 		width: 100%;
 		max-width: 9.25rem;
-		margin: 0 0 .5rem;
+		// margin: 0 0 .5rem;
 
 		@media screen and (min-width:600px) {
 			max-width: 13.75rem;
