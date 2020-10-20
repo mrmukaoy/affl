@@ -13,9 +13,9 @@ body {
 }
 
 .site {
-	min-height: calc(100vh - 130px);
+	min-height: calc(100vh - 110px);
 
-	/* these coincide with height of .site-footer__spacer */
+	/* these coincide exactly with height of .site-footer__spacer */
 	@media screen and (min-width:600px) {
 		min-height: calc(100vh - 110px);
 	}
@@ -52,18 +52,13 @@ body {
 }
 
 .site-main {
-	padding-bottom: 3em;
 	max-width: 63em;
-	padding: 0 0 160px;
+	padding: 0 0 3rem;
 	margin: 0 auto;
 
-	/* these align with height of .site-footer__spacer */
+	/* these align roughly with height of .site-footer__spacer */
 	@media screen and (min-width:600px) {
-		padding-bottom: 140px;
-	}
-
-	@media screen and (min-width:900px) {
-		padding: 0 0 110px;
+		padding-bottom: 4rem;
 	}
 
 	.home & {
@@ -89,6 +84,7 @@ body {
 .thirty-five-em {
 	width: 100%;
 	max-width: 35rem;
+	padding: 0 1rem;
 	margin: 0 auto !important;
 }
 

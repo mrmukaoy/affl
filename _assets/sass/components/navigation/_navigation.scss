@@ -2,9 +2,13 @@
 	display: inline-block;
 	width: auto;
 	position: absolute;
-	top: 14.5px;
+	top: 56px;
 	right: 0;
 	padding-right: 0;
+
+	@media screen and (min-width: 600px) {
+		top: 14.5px;
+	}
 
 	@media screen and (min-width: 900px) {
 		top: 32px;
@@ -12,8 +16,14 @@
 	}
 
 	&.toggled {
-		padding-right: 58px;
-		animation: nav-out cubic-bezier(.165,.84,.44,1) .15s;
+		animation: nav-down cubic-bezier(.165,.84,.44,1) .15s;
+		background-color: rgba(21,35,41,.6);
+
+		@media screen and (min-width: 600px) {
+			animation: nav-out cubic-bezier(.165,.84,.44,1) .15s;
+			padding-right: 58px;
+			background-color: transparent;
+		}
 	}
 
 	ul {
@@ -66,9 +76,14 @@
 	}
 
 	li {
-		display: inline-block;
+		display: block;
 		position: relative;
-		padding: 0 .714em;
+		padding: .625rem;
+
+		@media screen and (min-width: 600px) {
+			padding: 0 .625rem;
+			display: inline-block;
+		}
 
 		&:hover > a,
 		&.focus > a {
@@ -95,6 +110,19 @@
 	.current_page_ancestor > a,
 	.current-menu-ancestor > a {
 		color: $color__link;
+	}
+}
+
+@keyframes nav-down {
+	0% {
+		opacity: 0;
+		-webkit-transform:translateY(-100vw);
+		transform:translateY(-100vw);
+	}
+	to {
+		opacity: 1;
+		-webkit-transform:translateY(0);
+		transform:translateY(0);
 	}
 }
 
