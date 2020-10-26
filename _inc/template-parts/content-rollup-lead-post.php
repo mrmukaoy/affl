@@ -25,7 +25,7 @@ if ( has_term( 'show-on-archive', 'show_thumbs' ) ) {
 				<?php
 				affl_archive_posted_by();
 				affl_archive_posted_on();
-				affl_archive_cats_tags( get_the_ID() );
+				// affl_archive_cats_tags( get_the_ID() );
 				?>
 			</div><!-- .entry-meta -->
 		</header><!-- .entry-header -->
@@ -37,9 +37,24 @@ if ( has_term( 'show-on-archive', 'show_thumbs' ) ) {
 	</div>
 
 	<?php // show (or don't show) the thumbnail here
+	if ( class_exists('Dynamic_Featured_Image') ) {
+		global $dynamic_featured_image;
+		$featured_images = $dynamic_featured_image->get_featured_images();
+		$second_image = $featured_images[0]['full'];
+		$second_image_id = $featured_images[0]['attachment_id'];
+	?>
+
+		<div class="thumbnail" >
+			<!-- <img src="<?php echo $second_image; ?>" alt=""/> -->
+			<?php wp_get_attachment_image( $second_image_id, 'square' ); ?>
+		</div>
+
+		<?php //You can now loop through the image to display them as required
+	}
+/*
 	if ( has_post_thumbnail() ) {
 		$img_url = get_the_post_thumbnail_url( get_the_ID() ); ?>
 	<div class="thumbnail" style="background: url('<?php echo esc_url( $img_url ); ?>') center;"></div>
 	<?php } ?>
-
+*/ ?>
 </article><!-- #post-<?php the_ID(); ?> -->
