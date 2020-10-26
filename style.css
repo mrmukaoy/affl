@@ -4,7 +4,7 @@ Theme URI: http://underscores.me/
 Author: Afflecto Media Marketing
 Author URI: https://afflectomm.com/
 Description: Description
-Version: 1.0.0
+Version: 1.0.3
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -1128,22 +1128,22 @@ button.site-nav__btn {
       margin-top: 0;
       margin-right: 0;
       margin-left: 0; }
-  .articles-wrapper .post.has-post-thumbnail .content,
-  .lead-blog-post .post.has-post-thumbnail .content {
-    width: auto; }
-    @media screen and (min-width: 600px) {
-      .articles-wrapper .post.has-post-thumbnail .content,
-      .lead-blog-post .post.has-post-thumbnail .content {
-        height: 100%; } }
+  @media screen and (min-width: 600px) {
+    .articles-wrapper .post.has-post-thumbnail .content,
+    .lead-blog-post .post.has-post-thumbnail .content {
+      height: 100%; } }
   .articles-wrapper .post .thumbnail,
   .lead-blog-post .post .thumbnail {
     width: 100%; }
     @media screen and (min-width: 600px) {
       .articles-wrapper .post .thumbnail,
       .lead-blog-post .post .thumbnail {
-        width: 50%;
-        height: 100%;
-        background-size: cover; } }
+        width: 50%; } }
+    .articles-wrapper .post .thumbnail img,
+    .lead-blog-post .post .thumbnail img {
+      display: block;
+      width: 100%;
+      max-width: none; }
 
 .articles-wrapper .byline,
 .articles-wrapper .posted-on,
@@ -1205,7 +1205,8 @@ button.site-nav__btn {
   letter-spacing: 4.5px; }
 
 .lead-blog-post .post {
-  display: table; }
+  display: -ms-flexbox;
+  display: flex; }
 
 .lead-blog-post .content {
   display: block;
@@ -1227,20 +1228,27 @@ button.site-nav__btn {
     margin-bottom: 4.625rem; }
   @media screen and (min-width: 600px) {
     .lead-blog-post .content {
-      display: table-cell;
       height: 100%;
       float: left; } }
+
+.lead-blog-post .portion {
+  width: 100%; }
+  @media screen and (min-width: 600px) {
+    .lead-blog-post .portion {
+      width: 50%; } }
 
 .lead-blog-post .posted-on {
   padding-bottom: 1.5rem; }
 
 .lead-blog-post .thumbnail {
   display: block;
-  height: 25rem; }
+  width: 100%; }
   @media screen and (min-width: 600px) {
     .lead-blog-post .thumbnail {
-      display: table-cell;
       height: 100%; } }
+
+.lead-blog-post .clickthrough {
+  left: 2.5rem; }
 
 @media screen and (min-width: 600px) {
   .articles-wrapper {
@@ -1306,14 +1314,14 @@ button.site-nav__btn {
   .articles-wrapper .post .entry-title {
     margin-bottom: 46px; }
   .articles-wrapper .post .thumbnail {
-    display: block;
-    height: 15em; }
+    display: block; }
     @media screen and (min-width: 600px) {
       .articles-wrapper .post .thumbnail {
         width: 50%;
         float: right;
-        height: 100%;
-        background-size: cover; } }
+        height: 100%; } }
+    .articles-wrapper .post .thumbnail img {
+      display: block; }
 
 .articles-wrapper .byline,
 .articles-wrapper .posted-on,

@@ -9,7 +9,7 @@
 
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.0.1' );
+	define( '_S_VERSION', '1.0.3' );
 }
 
 if ( ! function_exists( 'affl_setup' ) ) :
@@ -101,6 +101,9 @@ if ( ! function_exists( 'affl_setup' ) ) :
 				'flex-height' => true,
 			)
 		);
+
+		add_image_size( 'square', 500, 500, true );
+
 	}
 endif;
 add_action( 'after_setup_theme', 'affl_setup' );

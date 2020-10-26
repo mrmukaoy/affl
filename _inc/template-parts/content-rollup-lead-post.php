@@ -19,7 +19,7 @@ if ( has_term( 'show-on-archive', 'show_thumbs' ) ) {
 ?>
 
 <article id="post-<?php the_ID(); ?>" class="<?php echo $class; ?>">
-	<div class="content">
+	<div class="content portion">
 		<header class="entry-header">
 			<div class="entry-meta">
 				<?php
@@ -33,28 +33,25 @@ if ( has_term( 'show-on-archive', 'show_thumbs' ) ) {
 		<h3 class="entry-title"><a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
 		<p class="excerpt"><?php echo get_the_excerpt(); ?></p>
 
-		<p class="clickthrough"><a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark">Read more &rarr;</a></p>
 	</div>
+	<p class="clickthrough"><a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark">Read more &rarr;</a></p>
 
 	<?php // show (or don't show) the thumbnail here
 	if ( class_exists('Dynamic_Featured_Image') ) {
 		global $dynamic_featured_image;
 		$featured_images = $dynamic_featured_image->get_featured_images();
-		$second_image = $featured_images[0]['full'];
-		$second_image_id = $featured_images[0]['attachment_id'];
+		if ( ! empty( $featured_images ) ) {
+			$second_image_id = $featured_images[0]['attachment_id'];
+			$second_image_atts = wp_get_attachment_image_src( $second_image_id, 'square' );
+			$second_image_url = $second_image_atts[0];
 	?>
 
-		<div class="thumbnail" >
-			<!-- <img src="<?php echo $second_image; ?>" alt=""/> -->
-			<?php wp_get_attachment_image( $second_image_id, 'square' ); ?>
+		<div class="thumbnail portion" >
+			<img src="<?php echo $second_image_url; ?>" />
 		</div>
 
-		<?php //You can now loop through the image to display them as required
+	<?php
+		}
 	}
-/*
-	if ( has_post_thumbnail() ) {
-		$img_url = get_the_post_thumbnail_url( get_the_ID() ); ?>
-	<div class="thumbnail" style="background: url('<?php echo esc_url( $img_url ); ?>') center;"></div>
-	<?php } ?>
-*/ ?>
+	?>
 </article><!-- #post-<?php the_ID(); ?> -->

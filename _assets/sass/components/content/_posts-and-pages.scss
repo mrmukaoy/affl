@@ -240,7 +240,7 @@
 		&.has-post-thumbnail {
 
 			.content {
-				width: auto;
+				// width: auto;
 
 				@media screen and (min-width: 600px) {
 					height: 100%;
@@ -253,8 +253,12 @@
 
 			@media screen and (min-width: 600px) {
 				width: 50%;
-				height: 100%;
-				background-size: cover;
+			}
+
+			img {
+				display: block;
+				width: 100%;
+				max-width: none;
 			}
 		}
 	}
@@ -303,7 +307,7 @@
 .lead-blog-post {
 
 	.post {
-		display: table;
+		display: flex;
 	}
 
 	.content {
@@ -338,10 +342,16 @@
 		}
 
 		@media screen and (min-width: 600px) {
-			display: table-cell;
-			// width: 50%;
 			height: 100%;
 			float: left;
+		}
+	}
+
+	.portion {
+		width: 100%;
+
+		@media screen and (min-width: 600px) {
+			width: 50%;
 		}
 	}
 
@@ -351,12 +361,16 @@
 
 	.thumbnail {
 		display: block;
-		height: 25rem;
+		width: 100%;
 
 		@media screen and (min-width: 600px) {
-			display: table-cell;
+			// display: table-cell;
 			height: 100%;
 		}
+	}
+
+	.clickthrough {
+		left: 2.5rem;
 	}
 }
 
@@ -444,13 +458,15 @@
 
 		.thumbnail {
 			display: block;
-			height: 15em;
 
 			@media screen and (min-width: 600px) {
 				width: 50%;
 				float: right;
 				height: 100%;
-				background-size: cover;
+			}
+
+			img {
+				display: block;
 			}
 		}
 	}
