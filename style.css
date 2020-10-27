@@ -4,7 +4,7 @@ Theme URI: http://underscores.me/
 Author: Afflecto Media Marketing
 Author URI: https://afflectomm.com/
 Description: Description
-Version: 1.0.3
+Version: 1.0.4
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -1205,8 +1205,11 @@ button.site-nav__btn {
   letter-spacing: 4.5px; }
 
 .lead-blog-post .post {
-  display: -ms-flexbox;
-  display: flex; }
+  display: block; }
+  @media screen and (min-width: 600px) {
+    .lead-blog-post .post {
+      display: -ms-flexbox;
+      display: flex; } }
 
 .lead-blog-post .content {
   display: block;
@@ -1231,20 +1234,28 @@ button.site-nav__btn {
       height: 100%;
       float: left; } }
 
-.lead-blog-post .portion {
+.lead-blog-post .content.portion {
   width: 100%; }
-  @media screen and (min-width: 600px) {
-    .lead-blog-post .portion {
+  @media screen and (min-width: 900px) {
+    .lead-blog-post .content.portion {
+      width: 50%; } }
+
+.lead-blog-post .thumbnail.portion {
+  display: none; }
+  @media screen and (min-width: 900px) {
+    .lead-blog-post .thumbnail.portion {
+      display: block;
       width: 50%; } }
 
 .lead-blog-post .posted-on {
   padding-bottom: 1.5rem; }
 
 .lead-blog-post .thumbnail {
-  display: block;
+  display: none;
   width: 100%; }
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 900px) {
     .lead-blog-post .thumbnail {
+      display: block;
       height: 100%; } }
 
 .lead-blog-post .clickthrough {

@@ -28,9 +28,9 @@
 					affl_posted_on();
 					?>
 				</div>
-				<div class="cats-tags">
-					<?php affl_entry_cats_tags(); ?>
-				</div>
+				<!-- <div class="cats-tags">
+					<?php // affl_entry_cats_tags(); ?>
+				</div> -->
 			</div><!-- .entry-meta -->
 		</header><!-- .entry-header -->
 
