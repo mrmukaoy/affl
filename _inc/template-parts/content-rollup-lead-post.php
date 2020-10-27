@@ -32,9 +32,8 @@ if ( has_term( 'show-on-archive', 'show_thumbs' ) ) {
 
 		<h3 class="entry-title"><a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
 		<p class="excerpt"><?php echo get_the_excerpt(); ?></p>
-
+		<p class="clickthrough"><a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark">Read more &rarr;</a></p>
 	</div>
-	<p class="clickthrough"><a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark">Read more &rarr;</a></p>
 
 	<?php // show (or don't show) the thumbnail here
 	if ( class_exists('Dynamic_Featured_Image') ) {
