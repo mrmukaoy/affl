@@ -120,6 +120,8 @@ class WP_Widget_AfflectoMM_Recent_Posts extends WP_Widget {
 			<?php foreach ( $r->posts as $recent_post ) : ?>
 				<?php
 				$pid          = $recent_post->ID;
+				$author       = $recent_post->post_author;
+				$pdate        =
 				$post_title   = get_the_title( $recent_post->ID );
 				$title        = ( ! empty( $post_title ) ) ? $post_title : __( '(no title)' );
 				$aria_current = '';
@@ -133,9 +135,32 @@ class WP_Widget_AfflectoMM_Recent_Posts extends WP_Widget {
 						<header class="entry-header">
 							<div class="entry-meta">
 								<?php
-								affl_archive_posted_by();
-								affl_archive_posted_on();
-								affl_archive_cats_tags( $pid );
+								$byline = sprintf(
+									esc_html_x( 'Posted by %s', 'post author', 'affl' ),
+									'<span class="author vcard">' . esc_html( get_the_author_meta( 'display_name', $author ) ) . '</span>'
+								);
+								echo '<span class="byline"> ' . $byline . '</span>';
+
+								$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+								if ( get_the_time( 'U', $pid ) !== get_the_modified_time( 'U', $pid ) ) {
+									$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+								}
+
+								$time_string = sprintf(
+									$time_string,
+									esc_attr( get_the_date( DATE_W3C, $pid  ) ),
+									esc_html( get_the_date( '', $pid ) ),
+									esc_attr( get_the_modified_date( DATE_W3C, $pid ) ),
+									esc_html( get_the_modified_date( '', $pid ) )
+								);
+
+								$posted_on = sprintf(
+									/* translators: %s: post date. */
+									esc_html_x( '%s', 'post date', 'affl' ),
+						 			$time_string
+								);
+
+								echo '<span class="posted-on">' . $posted_on . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 								?>
 							</div><!-- .entry-meta -->
 						</header><!-- .entry-header -->

@@ -50,8 +50,12 @@
 	}
 
 	h2 {
-		font-size: 1.714em;
+		font-size: 1.5rem;
 		margin: 0.25em 0 1.5em;
+
+		@media screen and (min-width: 900px) {
+			font-size: 1.714rem;
+		}
 	}
 	h3 {
 		font-size: 1.5em;
@@ -542,7 +546,11 @@
 }
 
 h1.entry-title {
-	font-size: 4.375rem;
+	font-size: 2.5rem;
+
+	@media screen and (min-width: 900px) {
+		font-size: 4.375rem;
+	}
 }
 
 h2 {
