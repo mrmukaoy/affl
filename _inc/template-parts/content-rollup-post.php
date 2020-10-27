@@ -45,8 +45,8 @@ if ( has_term( 'show-on-archive', 'show_thumbs' ) ) {
 			$second_image_url = $second_image_atts[0];
 	?>
 
-		<div class="thumbnail" >
-			<img src="<?php echo $second_image_url; ?>" />
+		<div class="thumbnail" style="background-image: url('<?php echo $second_image_url; ?>'); background-size: cover; background-position: center;">
+			<?php /* <img src="<?php echo $second_image_url; ?>" /> */ ?>
 		</div>
 
 	<?php
